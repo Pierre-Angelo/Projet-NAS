@@ -1,0 +1,32 @@
+Dec 19 15:09:43.644 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 19 15:09:43.645 HYPERVISOR: Started on IP = localhost, TCP port = 58733.
+Dec 19 15:09:44.140 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 19 15:09:44.141 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips 
+Dec 19 15:09:44.141 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips
+Dec 19 15:09:44.141 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips\dcf4d888-e2d0-4576-8948-ea0064432298 
+Dec 19 15:09:44.142 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips\dcf4d888-e2d0-4576-8948-ea0064432298
+Dec 19 15:09:44.143 HYPERVISOR: exec_cmd: vm create R12 2 c7200 
+Dec 19 15:09:44.144 VM: VM R12 created.
+Dec 19 15:09:44.145 HYPERVISOR: exec_cmd: vm set_con_tcp_port R12 5004 
+Dec 19 15:09:44.145 HYPERVISOR: exec_cmd: c7200 get_mac_addr R12 
+Dec 19 15:09:44.146 HYPERVISOR: exec_cmd: vm get_status R12 
+Dec 19 15:09:44.146 HYPERVISOR: exec_cmd: vm slot_add_binding R12 0 0 C7200-IO-FE 
+Dec 19 15:09:44.147 HYPERVISOR: exec_cmd: vm set_disk0 R12 0 
+Dec 19 15:09:44.148 HYPERVISOR: exec_cmd: vm set_exec_area R12 64 
+Dec 19 15:09:44.150 HYPERVISOR: exec_cmd: vm set_ios R12 C:/Users/papey/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Dec 19 15:09:44.151 HYPERVISOR: exec_cmd: c7200 set_mac_addr R12 ca02.89b8.0000 
+Dec 19 15:09:44.151 HYPERVISOR: exec_cmd: vm set_nvram R12 512 
+Dec 19 15:09:44.152 HYPERVISOR: exec_cmd: vm set_ram R12 512 
+Dec 19 15:09:44.153 HYPERVISOR: exec_cmd: vm get_status R12 
+Dec 19 15:09:44.153 HYPERVISOR: exec_cmd: vm slot_add_binding R12 1 0 PA-GE 
+Dec 19 15:09:44.154 HYPERVISOR: exec_cmd: vm get_status R12 
+Dec 19 15:09:44.154 HYPERVISOR: exec_cmd: vm slot_add_binding R12 2 0 PA-GE 
+Dec 19 15:09:44.155 HYPERVISOR: exec_cmd: vm get_status R12 
+Dec 19 15:09:44.156 HYPERVISOR: exec_cmd: vm slot_add_binding R12 3 0 PA-GE 
+Dec 19 15:09:44.159 HYPERVISOR: exec_cmd: vm set_con_tcp_port R12 5004 
+Dec 19 15:09:46.881 HYPERVISOR: exec_cmd: nio create_udp udp-f4455e1b-53c9-4213-8663-cb366b5eaf04 10034 127.0.0.1 10035 
+Dec 19 15:09:47.137 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R12 2 0 udp-f4455e1b-53c9-4213-8663-cb366b5eaf04 
+Dec 19 15:09:47.138 HYPERVISOR: exec_cmd: vm get_status R12 
+Dec 19 15:09:48.153 HYPERVISOR: exec_cmd: nio create_udp udp-a6411fee-2d7e-496b-b686-a0638e6934e6 10050 127.0.0.1 10051 
+Dec 19 15:09:48.158 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R12 1 0 udp-a6411fee-2d7e-496b-b686-a0638e6934e6 
+Dec 19 15:09:48.159 HYPERVISOR: exec_cmd: vm get_status R12 

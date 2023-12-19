@@ -1,0 +1,34 @@
+Dec 19 15:09:46.051 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 19 15:09:46.052 HYPERVISOR: Started on IP = localhost, TCP port = 58745.
+Dec 19 15:09:46.542 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 19 15:09:46.543 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips 
+Dec 19 15:09:46.543 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips
+Dec 19 15:09:46.543 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips\7db896f9-e3d8-4106-8f7b-b9cf3ae9b151 
+Dec 19 15:09:46.544 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips\7db896f9-e3d8-4106-8f7b-b9cf3ae9b151
+Dec 19 15:09:46.544 HYPERVISOR: exec_cmd: vm create R22 10 c7200 
+Dec 19 15:09:46.546 VM: VM R22 created.
+Dec 19 15:09:46.547 HYPERVISOR: exec_cmd: vm set_con_tcp_port R22 5011 
+Dec 19 15:09:46.547 HYPERVISOR: exec_cmd: c7200 get_mac_addr R22 
+Dec 19 15:09:46.548 HYPERVISOR: exec_cmd: vm get_status R22 
+Dec 19 15:09:46.548 HYPERVISOR: exec_cmd: vm slot_add_binding R22 0 0 C7200-IO-FE 
+Dec 19 15:09:46.549 HYPERVISOR: exec_cmd: vm set_disk0 R22 0 
+Dec 19 15:09:46.550 HYPERVISOR: exec_cmd: vm set_exec_area R22 64 
+Dec 19 15:09:46.552 HYPERVISOR: exec_cmd: vm set_ios R22 C:/Users/papey/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Dec 19 15:09:46.553 HYPERVISOR: exec_cmd: c7200 set_mac_addr R22 ca0a.4338.0000 
+Dec 19 15:09:46.554 HYPERVISOR: exec_cmd: vm set_nvram R22 512 
+Dec 19 15:09:46.555 HYPERVISOR: exec_cmd: vm set_ram R22 512 
+Dec 19 15:09:46.556 HYPERVISOR: exec_cmd: vm get_status R22 
+Dec 19 15:09:46.556 HYPERVISOR: exec_cmd: vm slot_add_binding R22 1 0 PA-GE 
+Dec 19 15:09:46.557 HYPERVISOR: exec_cmd: vm get_status R22 
+Dec 19 15:09:46.557 HYPERVISOR: exec_cmd: vm slot_add_binding R22 2 0 PA-GE 
+Dec 19 15:09:46.558 HYPERVISOR: exec_cmd: vm get_status R22 
+Dec 19 15:09:46.559 HYPERVISOR: exec_cmd: vm slot_add_binding R22 3 0 PA-GE 
+Dec 19 15:09:46.559 HYPERVISOR: exec_cmd: vm get_status R22 
+Dec 19 15:09:46.560 HYPERVISOR: exec_cmd: vm slot_add_binding R22 4 0 PA-GE 
+Dec 19 15:09:46.562 HYPERVISOR: exec_cmd: vm set_con_tcp_port R22 5011 
+Dec 19 15:09:47.195 HYPERVISOR: exec_cmd: nio create_udp udp-58b01dfa-deab-4329-a1de-a9a94b5cbe8d 10038 127.0.0.1 10039 
+Dec 19 15:09:47.482 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R22 1 0 udp-58b01dfa-deab-4329-a1de-a9a94b5cbe8d 
+Dec 19 15:09:47.483 HYPERVISOR: exec_cmd: vm get_status R22 
+Dec 19 15:09:48.098 HYPERVISOR: exec_cmd: nio create_udp udp-c44aaf6b-662a-4421-8a71-8c36c6f83709 10046 127.0.0.1 10047 
+Dec 19 15:09:48.103 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R22 3 0 udp-c44aaf6b-662a-4421-8a71-8c36c6f83709 
+Dec 19 15:09:48.104 HYPERVISOR: exec_cmd: vm get_status R22 
