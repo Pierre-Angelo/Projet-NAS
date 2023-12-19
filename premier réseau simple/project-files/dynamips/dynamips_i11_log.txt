@@ -1,0 +1,34 @@
+Dec 19 15:09:45.442 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 19 15:09:45.443 HYPERVISOR: Started on IP = localhost, TCP port = 58742.
+Dec 19 15:09:45.944 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 19 15:09:45.945 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips 
+Dec 19 15:09:45.945 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips
+Dec 19 15:09:45.946 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips\3dce976d-7fe3-42fb-b16f-7c3686e7f667 
+Dec 19 15:09:45.946 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips\3dce976d-7fe3-42fb-b16f-7c3686e7f667
+Dec 19 15:09:45.947 HYPERVISOR: exec_cmd: vm create R23 9 c7200 
+Dec 19 15:09:45.948 VM: VM R23 created.
+Dec 19 15:09:45.950 HYPERVISOR: exec_cmd: vm set_con_tcp_port R23 5010 
+Dec 19 15:09:45.959 HYPERVISOR: exec_cmd: c7200 get_mac_addr R23 
+Dec 19 15:09:45.959 HYPERVISOR: exec_cmd: vm get_status R23 
+Dec 19 15:09:45.959 HYPERVISOR: exec_cmd: vm slot_add_binding R23 0 0 C7200-IO-FE 
+Dec 19 15:09:45.961 HYPERVISOR: exec_cmd: vm set_disk0 R23 0 
+Dec 19 15:09:45.961 HYPERVISOR: exec_cmd: vm set_exec_area R23 64 
+Dec 19 15:09:45.963 HYPERVISOR: exec_cmd: vm set_ios R23 C:/Users/papey/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Dec 19 15:09:45.963 HYPERVISOR: exec_cmd: c7200 set_mac_addr R23 ca09.19e8.0000 
+Dec 19 15:09:45.964 HYPERVISOR: exec_cmd: vm set_nvram R23 512 
+Dec 19 15:09:45.965 HYPERVISOR: exec_cmd: vm set_ram R23 512 
+Dec 19 15:09:45.966 HYPERVISOR: exec_cmd: vm get_status R23 
+Dec 19 15:09:45.967 HYPERVISOR: exec_cmd: vm slot_add_binding R23 1 0 PA-GE 
+Dec 19 15:09:45.968 HYPERVISOR: exec_cmd: vm get_status R23 
+Dec 19 15:09:45.968 HYPERVISOR: exec_cmd: vm slot_add_binding R23 2 0 PA-GE 
+Dec 19 15:09:45.969 HYPERVISOR: exec_cmd: vm get_status R23 
+Dec 19 15:09:45.969 HYPERVISOR: exec_cmd: vm slot_add_binding R23 3 0 PA-GE 
+Dec 19 15:09:45.970 HYPERVISOR: exec_cmd: vm get_status R23 
+Dec 19 15:09:45.970 HYPERVISOR: exec_cmd: vm slot_add_binding R23 4 0 PA-GE 
+Dec 19 15:09:45.972 HYPERVISOR: exec_cmd: vm set_con_tcp_port R23 5010 
+Dec 19 15:09:47.804 HYPERVISOR: exec_cmd: nio create_udp udp-44ada2f4-f36b-4139-8471-67b18ae4f961 10044 127.0.0.1 10045 
+Dec 19 15:09:48.088 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R23 3 0 udp-44ada2f4-f36b-4139-8471-67b18ae4f961 
+Dec 19 15:09:48.088 HYPERVISOR: exec_cmd: vm get_status R23 
+Dec 19 15:09:48.504 HYPERVISOR: exec_cmd: nio create_udp udp-0ae13353-ede9-4acd-9bd2-61927829548f 10058 127.0.0.1 10059 
+Dec 19 15:09:48.509 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R23 1 0 udp-0ae13353-ede9-4acd-9bd2-61927829548f 
+Dec 19 15:09:48.510 HYPERVISOR: exec_cmd: vm get_status R23 
