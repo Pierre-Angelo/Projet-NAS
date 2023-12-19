@@ -29,3 +29,23 @@ Dec 19 15:09:45.363 HYPERVISOR: exec_cmd: vm set_con_tcp_port R21 5006
 Dec 19 15:09:47.491 HYPERVISOR: exec_cmd: nio create_udp udp-d76179ec-cd00-4ca1-bcab-90eb2575af8b 10040 127.0.0.1 10041 
 Dec 19 15:09:47.762 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R21 2 0 udp-d76179ec-cd00-4ca1-bcab-90eb2575af8b 
 Dec 19 15:09:47.763 HYPERVISOR: exec_cmd: vm get_status R21 
+Dec 19 15:14:48.147 HYPERVISOR: exec_cmd: vm set_ghost_status R21 2 
+Dec 19 15:14:48.149 HYPERVISOR: exec_cmd: vm set_ghost_file R21 C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\premier réseau simple\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Dec 19 15:14:48.150 HYPERVISOR: exec_cmd: vm get_status R21 
+Dec 19 15:14:48.178 HYPERVISOR: exec_cmd: vm set_config R21 configs\i8_startup-config.cfg 
+Dec 19 15:14:48.181 HYPERVISOR: exec_cmd: vm start R21 
+Dec 19 15:15:01.179 HYPERVISOR: exec_cmd: vm get_status R21 
+Dec 19 15:15:01.180 HYPERVISOR: exec_cmd: vm stop R21 
+Dec 19 15:15:01.266 VM: VM R21 shutdown.
+Dec 19 15:15:01.268 HYPERVISOR: exec_cmd: vm extract_config R21 
+Dec 19 15:44:37.032 HYPERVISOR: exec_cmd: vm get_status R21 
+Dec 19 15:44:37.033 HYPERVISOR: exec_cmd: vm extract_config R21 
+Dec 19 15:44:40.536 HYPERVISOR: exec_cmd: vm get_status R21 
+Dec 19 15:44:40.537 HYPERVISOR: exec_cmd: vm extract_config R21 
+Dec 19 15:44:40.633 HYPERVISOR: exec_cmd: vm get_status R21 
+Dec 19 15:44:40.634 HYPERVISOR: exec_cmd: vm extract_config R21 
+Dec 19 15:44:40.636 HYPERVISOR: exec_cmd: vm delete R21 
+Dec 19 15:44:40.636 VM: VM R21 destroyed.
+Dec 19 15:44:40.638 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 19 15:44:41.126 HYPERVISOR: Stopped.
+Dec 19 15:44:41.127 GENERAL: reset done.
