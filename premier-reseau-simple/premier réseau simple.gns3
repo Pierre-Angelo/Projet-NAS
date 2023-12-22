@@ -67,7 +67,7 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"29\" width=\"24\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">.1</text></svg>",
-                "x": -45,
+                "x": -50,
                 "y": 23,
                 "z": 2
             },
@@ -121,8 +121,8 @@
                 "locked": false,
                 "rotation": 0,
                 "svg": "<svg height=\"29\" width=\"24\"><text fill=\"#000000\" fill-opacity=\"1.0\" font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\">.1</text></svg>",
-                "x": -141,
-                "y": 24,
+                "x": -157,
+                "y": 20,
                 "z": 2
             },
             {
@@ -309,8 +309,8 @@
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
                             "text": "g2/0",
-                            "x": -47,
-                            "y": -7
+                            "x": -56,
+                            "y": -12
                         },
                         "node_id": "efa70718-6f90-4be6-8a61-6e8c3460d470",
                         "port_number": 0
@@ -555,8 +555,8 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "ec6d2d12-2497-478c-8056-b2d24be0f39f",
                 "width": 66,
-                "x": -110,
-                "y": -9,
+                "x": -123,
+                "y": -7,
                 "z": 1
             },
             {
