@@ -1,0 +1,19 @@
+{
+    "routeurs" :  [ 
+        {
+            "AS" : 1,
+            "protocole" : "RIP",
+            "border" : "NULL",
+            "hostname" : "R11",
+            "interfaces" : [
+                {
+                    "G1/0" : "111:1::1/64"
+                } ]
+    
+            
+    
+        }
+    
+    ]}
+    
+    
