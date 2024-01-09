@@ -1,0 +1,58 @@
+Jan 09 15:48:44.082 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 09 15:48:44.082 HYPERVISOR: Started on IP = localhost, TCP port = 51764.
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips 
+Jan 09 15:48:44.551 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\80b312b2-9921-41b0-b614-952ce6b3b26f 
+Jan 09 15:48:44.551 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\80b312b2-9921-41b0-b614-952ce6b3b26f
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm create R23 6 c7200 
+Jan 09 15:48:44.551 VM: VM R23 created.
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm set_con_tcp_port R23 5005 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: c7200 get_mac_addr R23 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm slot_add_binding R23 0 0 C7200-IO-FE 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm set_disk0 R23 0 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm set_exec_area R23 64 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm set_ios R23 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: c7200 set_mac_addr R23 ca06.53a4.0000 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm set_nvram R23 512 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm set_ram R23 512 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 15:48:44.551 HYPERVISOR: exec_cmd: vm slot_add_binding R23 1 0 PA-GE 
+Jan 09 15:48:44.566 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 15:48:44.566 HYPERVISOR: exec_cmd: vm slot_add_binding R23 2 0 PA-GE 
+Jan 09 15:48:44.566 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 15:48:44.566 HYPERVISOR: exec_cmd: vm slot_add_binding R23 3 0 PA-GE 
+Jan 09 15:48:44.566 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 15:48:44.566 HYPERVISOR: exec_cmd: vm slot_add_binding R23 4 0 PA-GE 
+Jan 09 15:48:50.801 HYPERVISOR: exec_cmd: nio create_udp udp-7bc3e976-2ce1-49db-8446-d1e63b26aafd 10010 127.0.0.1 10011 
+Jan 09 15:48:51.051 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R23 3 0 udp-7bc3e976-2ce1-49db-8446-d1e63b26aafd 
+Jan 09 15:48:51.051 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 15:48:54.989 HYPERVISOR: exec_cmd: nio create_udp udp-4b5fd7e7-40d0-44bc-9537-e223a2bc9377 10098 127.0.0.1 10099 
+Jan 09 15:48:54.989 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R23 1 0 udp-4b5fd7e7-40d0-44bc-9537-e223a2bc9377 
+Jan 09 15:48:55.004 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 15:48:55.098 HYPERVISOR: exec_cmd: nio create_udp udp-12152b88-fe31-41ca-8d57-527329e168df 10104 127.0.0.1 10105 
+Jan 09 15:48:55.114 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R23 2 0 udp-12152b88-fe31-41ca-8d57-527329e168df 
+Jan 09 15:48:55.114 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 15:48:55.473 HYPERVISOR: exec_cmd: nio create_udp udp-12613438-5092-4779-9806-f74d83a022a4 10110 127.0.0.1 10111 
+Jan 09 15:48:55.473 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R23 4 0 udp-12613438-5092-4779-9806-f74d83a022a4 
+Jan 09 15:48:55.473 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 16:02:16.544 HYPERVISOR: exec_cmd: vm set_ios R23 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 09 16:02:39.511 HYPERVISOR: exec_cmd: vm set_ghost_status R23 2 
+Jan 09 16:02:39.511 HYPERVISOR: exec_cmd: vm set_ghost_file R23 C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 09 16:02:39.511 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 16:02:39.527 HYPERVISOR: exec_cmd: vm set_config R23 configs\i6_startup-config.cfg 
+Jan 09 16:02:39.527 HYPERVISOR: exec_cmd: vm start R23 
+Jan 09 16:03:01.272 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 16:03:01.272 HYPERVISOR: exec_cmd: vm stop R23 
+Jan 09 16:03:01.522 VM: VM R23 shutdown.
+Jan 09 16:03:01.522 HYPERVISOR: exec_cmd: vm extract_config R23 
+Jan 09 16:26:53.123 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 16:26:53.123 HYPERVISOR: exec_cmd: vm extract_config R23 
+Jan 09 16:26:53.623 HYPERVISOR: exec_cmd: vm get_status R23 
+Jan 09 16:26:53.623 HYPERVISOR: exec_cmd: vm extract_config R23 
+Jan 09 16:26:53.623 HYPERVISOR: exec_cmd: vm delete R23 
+Jan 09 16:26:53.623 VM: VM R23 destroyed.
+Jan 09 16:26:53.623 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 09 16:26:54.076 HYPERVISOR: Stopped.
+Jan 09 16:26:54.076 GENERAL: reset done.

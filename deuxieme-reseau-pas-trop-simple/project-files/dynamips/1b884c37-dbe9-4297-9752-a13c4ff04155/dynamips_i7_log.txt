@@ -1,0 +1,54 @@
+Jan 09 15:48:45.238 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 09 15:48:45.254 HYPERVISOR: Started on IP = localhost, TCP port = 51770.
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips 
+Jan 09 15:48:45.723 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\eb00c665-cc69-4d6f-9da3-0b9430aa9e03 
+Jan 09 15:48:45.723 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\eb00c665-cc69-4d6f-9da3-0b9430aa9e03
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm create R24 9 c7200 
+Jan 09 15:48:45.723 VM: VM R24 created.
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm set_con_tcp_port R24 5008 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: c7200 get_mac_addr R24 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm slot_add_binding R24 0 0 C7200-IO-FE 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm set_disk0 R24 0 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm set_exec_area R24 64 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm set_ios R24 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: c7200 set_mac_addr R24 ca09.1c68.0000 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm set_nvram R24 512 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm set_ram R24 512 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm slot_add_binding R24 1 0 PA-GE 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm slot_add_binding R24 2 0 PA-GE 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 15:48:45.723 HYPERVISOR: exec_cmd: vm slot_add_binding R24 3 0 PA-GE 
+Jan 09 15:48:45.738 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 15:48:45.738 HYPERVISOR: exec_cmd: vm slot_add_binding R24 4 0 PA-GE 
+Jan 09 15:48:55.114 HYPERVISOR: exec_cmd: nio create_udp udp-084b91c9-3bfb-4aad-8374-a8867567b2c0 10106 127.0.0.1 10107 
+Jan 09 15:48:55.380 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R24 2 0 udp-084b91c9-3bfb-4aad-8374-a8867567b2c0 
+Jan 09 15:48:55.380 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 15:48:55.598 HYPERVISOR: exec_cmd: nio create_udp udp-d4b84e10-e20c-44ec-95e5-6393ca7f19b4 10116 127.0.0.1 10117 
+Jan 09 15:48:55.598 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R24 4 0 udp-d4b84e10-e20c-44ec-95e5-6393ca7f19b4 
+Jan 09 15:48:55.598 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 15:48:55.723 HYPERVISOR: exec_cmd: nio create_udp udp-756c7146-4578-4625-98e5-851532558156 10124 127.0.0.1 10125 
+Jan 09 15:48:55.723 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R24 1 0 udp-756c7146-4578-4625-98e5-851532558156 
+Jan 09 15:48:55.723 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 16:02:39.808 HYPERVISOR: exec_cmd: vm set_ghost_status R24 2 
+Jan 09 16:02:39.808 HYPERVISOR: exec_cmd: vm set_ghost_file R24 C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 09 16:02:39.808 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 16:02:39.808 HYPERVISOR: exec_cmd: vm set_config R24 configs\i9_startup-config.cfg 
+Jan 09 16:02:39.808 HYPERVISOR: exec_cmd: vm start R24 
+Jan 09 16:03:01.428 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 16:03:01.428 HYPERVISOR: exec_cmd: vm stop R24 
+Jan 09 16:03:01.616 VM: VM R24 shutdown.
+Jan 09 16:03:01.631 HYPERVISOR: exec_cmd: vm extract_config R24 
+Jan 09 16:26:53.138 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 16:26:53.138 HYPERVISOR: exec_cmd: vm extract_config R24 
+Jan 09 16:26:53.623 HYPERVISOR: exec_cmd: vm get_status R24 
+Jan 09 16:26:53.623 HYPERVISOR: exec_cmd: vm extract_config R24 
+Jan 09 16:26:53.623 HYPERVISOR: exec_cmd: vm delete R24 
+Jan 09 16:26:53.623 VM: VM R24 destroyed.
+Jan 09 16:26:53.638 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 09 16:26:54.076 HYPERVISOR: Stopped.
+Jan 09 16:26:54.076 GENERAL: reset done.
