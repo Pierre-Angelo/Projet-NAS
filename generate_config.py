@@ -12,7 +12,7 @@ t = [
     6*nl+"no ip domain lookup\nipv6 unicast-routing\nipv6 cef\n"+
     2*nl+"multilink bundle-name authenticated\n"+nl*9+
     "ip tcp synwait-time 5\n"+12*nl,
-    "ip forward-protocol nd\n"+nl*2+"no ip http server\nno ip http secure-server\n",
+    "ip forward-protocol nd\n"+nl*2+"no ip http server\nno ip http secure-server\n"+nl,
     4*nl+"control-plane\n"+2*nl+
     "line con 0\n exec-timeout 0 0\n privilege level 15\n logging synchronous\n stopbits 1\n",
     "line aux 0\n exec-timeout 0 0\n privilege level 15\n logging synchronous\n stopbits 1\nline vty 0 4\n login\n"+2*nl+"end"
@@ -60,7 +60,7 @@ class router() :
         res += " address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
         
         if self.border != "NULL" :
-            res += "  network 111:1112::11/64"
+            res += "  network 111:1112::11/64\n" if self.AS == "1" else "  network 222:2122::21/64\n"
         for nei in listRAS :
             if nei != self.hostname :
                 res +=   "  neighbor "+nei[1]+"::"+ nei[2]+ " activate\n"
@@ -76,7 +76,7 @@ class router() :
     def conn(self):
         res = ""
         if self.protocole == "OSPF":
-            res += "ipv6 router ospf 200\n router-id "+((self.hostname[1:]+".")*4)[:-1]+"\n"
+            res += "ipv6 router ospf 2\n router-id "+((self.hostname[1:]+".")*4)[:-1]+"\n"
             if self.border != "NULL" :
                 res += " passive-interface  GigabitEthernet"+self.border[1:]
         else :
