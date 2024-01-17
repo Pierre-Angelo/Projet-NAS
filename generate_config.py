@@ -53,9 +53,9 @@ class router() :
                 res+= " neighbor "+nei[1]+"::"+ nei[2]+" update-source Loopback0\n"
 
         if self.border != "NULL" :
-            remAS = "1" if self.AS == "2" else "2"
-            nei = self.interfaces[self.border][ self.interfaces[self.border].index(remAS):self.interfaces[self.border].index(remAS)+2]
-            add = self.interfaces[self.border][:10] + remAS +self.hostname[2:]
+            remRouter = self.interfaces[self.border][6:8] if self.interfaces[self.border][4:6] == self.hostname[1:] else self.interfaces[self.border][4:6] 
+            remAS = remRouter[0]
+            add = self.interfaces[self.border][:10] + remRouter
             res += " neighbor "+ add + " remote-as "+ remAS+"\n"+nl
         res += " address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
         
@@ -65,7 +65,7 @@ class router() :
             if nei != self.hostname :
                 res +=   "  neighbor "+nei[1]+"::"+ nei[2]+ " activate\n"
         if self.border != "NULL" :
-            remAS = "1" if self.AS == "2" else "2"
+            add = self.interfaces[self.border][:10] + remRouter
             add = self.interfaces[self.border][:10] + remAS +self.hostname[2:]
             res += "  neighbor "+ add + " activate\n"+nl 
         res += " exit-address-family\n"+nl
