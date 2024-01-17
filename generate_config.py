@@ -55,7 +55,7 @@ class router() :
         if self.border != "NULL" :
             remAS = "1" if self.AS == "2" else "2"
             nei = self.interfaces[self.border][ self.interfaces[self.border].index(remAS):self.interfaces[self.border].index(remAS)+2]
-            add = remAS*3+":"+self.interfaces[self.border][4:9]+"::"+nei
+            add = self.interfaces[self.border][:10] + remAS +self.hostname[2:]
             res += " neighbor "+ add + " remote-as "+ remAS+"\n"+nl
         res += " address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
         
@@ -66,8 +66,7 @@ class router() :
                 res +=   "  neighbor "+nei[1]+"::"+ nei[2]+ " activate\n"
         if self.border != "NULL" :
             remAS = "1" if self.AS == "2" else "2"
-            nei = self.interfaces[self.border][ self.interfaces[self.border].index(remAS):self.interfaces[self.border].index(remAS)+2]
-            add = remAS*3+":"+self.interfaces[self.border][4:9]+"::"+nei
+            add = self.interfaces[self.border][:10] + remAS +self.hostname[2:]
             res += "  neighbor "+ add + " activate\n"+nl 
         res += " exit-address-family\n"+nl
                
