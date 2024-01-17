@@ -1,0 +1,34 @@
+Jan 17 10:42:20.591 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 17 10:42:20.591 HYPERVISOR: Started on IP = localhost, TCP port = 53389.
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips 
+Jan 17 10:42:21.063 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\11b9fa6d-214c-4845-b6a4-b1db370b87a5 
+Jan 17 10:42:21.063 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\11b9fa6d-214c-4845-b6a4-b1db370b87a5
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm create R12 2 c7200 
+Jan 17 10:42:21.063 VM: VM R12 created.
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm set_con_tcp_port R12 5001 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: c7200 get_mac_addr R12 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm slot_add_binding R12 0 0 C7200-IO-FE 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm set_disk0 R12 0 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm set_exec_area R12 64 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm set_ios R12 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: c7200 set_mac_addr R12 ca02.2ad4.0000 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm set_nvram R12 512 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm set_ram R12 512 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 10:42:21.063 HYPERVISOR: exec_cmd: vm slot_add_binding R12 1 0 PA-GE 
+Jan 17 10:42:21.079 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 10:42:21.079 HYPERVISOR: exec_cmd: vm slot_add_binding R12 2 0 PA-GE 
+Jan 17 10:42:21.079 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 10:42:21.079 HYPERVISOR: exec_cmd: vm slot_add_binding R12 3 0 PA-GE 
+Jan 17 10:42:21.079 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 10:42:21.079 HYPERVISOR: exec_cmd: vm slot_add_binding R12 4 0 PA-GE 
+Jan 17 10:42:35.635 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 10:42:35.638 HYPERVISOR: exec_cmd: vm extract_config R12 
+Jan 17 10:42:35.641 HYPERVISOR: exec_cmd: vm delete R12 
+Jan 17 10:42:35.641 VM: VM R12 destroyed.
+Jan 17 10:42:35.644 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 17 10:42:35.741 HYPERVISOR: Stopped.
+Jan 17 10:42:35.741 GENERAL: reset done.
