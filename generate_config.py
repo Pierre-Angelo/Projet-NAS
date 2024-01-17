@@ -60,7 +60,7 @@ class router() :
         res += " address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
         
         if self.border != "NULL" :
-            res += "  network 111:1112::11/64\n" if self.AS == "1" else "  network 222:2122::21/64\n"
+            res += "  network 111:1112::/64\n" if self.AS == "1" else "  network 222:2122::/64\n"
         for nei in listRAS :
             if nei != self.hostname :
                 res +=   "  neighbor "+nei[1]+"::"+ nei[2]+ " activate\n"
@@ -113,4 +113,4 @@ for r in list_router:
 
     with open("deuxieme-reseau-pas-trop-simple\project-files\dynamips\\"+fichiers[r.hostname][0]+"\configs\i"+fichiers[r.hostname][1]+"_startup-config.cfg",'w',encoding='utf-8') as f :
         f.write(config)
-         
+        
