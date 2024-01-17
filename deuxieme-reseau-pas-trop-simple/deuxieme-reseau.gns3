@@ -21,9 +21,9 @@
                 "drawing_id": "22c2313e-897f-4737-a4fa-206bb260d29b",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg width=\"1068.2138838109756\" height=\"497.2340518978644\"><ellipse cx=\"534\" rx=\"535\" cy=\"248\" ry=\"249\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#aa0000\" /></svg>",
-                "x": -1083,
-                "y": -346,
+                "svg": "<svg height=\"497.2340518978644\" width=\"1068.2138838109756\"><ellipse cx=\"534\" cy=\"248\" fill=\"#ffffff\" fill-opacity=\"1.0\" rx=\"535\" ry=\"249\" stroke=\"#aa0000\" stroke-width=\"2\" /></svg>",
+                "x": -1139,
+                "y": -317,
                 "z": 0
             },
             {
