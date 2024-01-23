@@ -5,6 +5,7 @@
             "protocole" : "RIP",
             "border" : "NULL",
             "hostname" : "R11",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G2/0" : "111:1112::11/64",
@@ -16,6 +17,7 @@
             "protocole" : "RIP",
             "border" : "NULL",
             "hostname" : "R12",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "111:1215::12/64",
@@ -28,6 +30,7 @@
             "protocole" : "RIP",
             "border" : "NULL",
             "hostname" : "R13",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "111:1316::13/64",
@@ -41,6 +44,7 @@
             "protocole" : "RIP",
             "border" : "G1/0",
             "hostname" : "R14",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "333:1424::14/64",
@@ -53,6 +57,7 @@
             "protocole" : "RIP",
             "border" : "NULL",
             "hostname" : "R15",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "111:1215::15/64",
@@ -65,6 +70,7 @@
             "protocole" : "RIP",
             "border" : "NULL",
             "hostname" : "R16",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "111:1316::16/64",
@@ -78,6 +84,7 @@
             "protocole" : "RIP",
             "border" : "G1/0",
             "hostname" : "R17",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "333:1727::17/64",
@@ -90,6 +97,7 @@
             "protocole" : "OSPF",
             "border" : "NULL",
             "hostname" : "R21",
+            "OSPF_cost": {"G3/0" : 10},  
             "interfaces" : 
                 {
                     "G2/0" : "222:2122::21/64",
@@ -101,6 +109,7 @@
             "protocole" : "OSPF",
             "border" : "NULL",
             "hostname" : "R22",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "222:2225::22/64",
@@ -112,6 +121,7 @@
             "protocole" : "OSPF",
             "border" : "NULL",
             "hostname" : "R23",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "222:2326::23/64",
@@ -125,6 +135,7 @@
             "protocole" : "OSPF",
             "border" : "G1/0",
             "hostname" : "R24",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "333:1424::24/64",
@@ -137,6 +148,7 @@
             "protocole" : "OSPF",
             "border" : "NULL",
             "hostname" : "R25",
+            "OSPF_cost": { "G2/0" : 10,"G3/0" : 10},  
             "interfaces" : 
                 {
                     "G1/0" : "222:2225::25/64",
@@ -149,6 +161,7 @@
             "protocole" : "OSPF",
             "border" : "NULL",
             "hostname" : "R26",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "222:2326::26/64",
@@ -162,6 +175,7 @@
             "protocole" : "OSPF",
             "border" : "G1/0",
             "hostname" : "R27",
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "333:1727::27/64",
