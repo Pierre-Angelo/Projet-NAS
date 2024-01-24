@@ -62,26 +62,28 @@ class router() :
             res += " neighbor "+ add + " remote-as "+ remAS+"\n"+nl
         res += " address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
         
-        #if self.border != "NULL" :
-        #    res += "  network " + self.AS*3 + "::/16\n" 
+
         for nei in listRAS :
             if nei != self.hostname :
                 res +=   "  neighbor "+nei[1]+"::"+ nei[2]+ " activate\n"
         if self.border != "NULL" :
             add = self.interfaces[self.border][:10] + remRouter
             add = self.interfaces[self.border][:10] + remAS +self.hostname[2:]
-            res += "  neighbor "+ add + " activate\n"+nl
-            res +=  "aggregate-address " + self.AS*3 + "::/16 summary-only\n" 
+            res += "  neighbor "+ add + " activate\n"
+            #res += " aggregate-address " + self.AS*3 + "::/16\n" 
+            res += " network " + self.AS*3 + "::/16\n" 
         res += " exit-address-family\n"+nl
+        
                
         return res
     
     def conn(self):
         res = ""
+        res += "ipv6 route " + self.AS*3 + "::/16 null0\n"
         if self.protocole == "OSPF":
             res += "ipv6 router ospf 2\n router-id "+((self.hostname[1:]+".")*4)[:-1]+"\n"
             if self.border != "NULL" :
-                res += " passive-interface  GigabitEthernet"+self.border[1:]
+                res += " passive-interface  GigabitEthernet"+self.border[1:]+ "\n"
         else :
             res += "ipv6 router rip p"+self.AS+"\n redistribute connected\n"
         return res

@@ -39,7 +39,7 @@
                 "drawing_id": "0c35f807-50c6-4eaa-b31a-48699f10b99e",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg height=\"32\" width=\"80\"><text fill=\"#aa0000\" fill-opacity=\"1.0\" font-family=\"MS Shell Dlg 2\" font-size=\"12.0\" font-weight=\"bold\">AS 111</text></svg>",
+                "svg": "<svg width=\"80\" height=\"32\"><text font-family=\"MS Shell Dlg 2\" font-size=\"12.0\" font-weight=\"bold\" fill=\"#aa0000\" fill-opacity=\"1.0\">AS 111</text></svg>",
                 "x": -646,
                 "y": 202,
                 "z": 2
