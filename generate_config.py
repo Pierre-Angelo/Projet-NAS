@@ -19,11 +19,12 @@ t = [
 ]
 
 class router() :
-    def __init__(self, AS,protocole, border,hostname,interfaces):
+    def __init__(self, AS,protocole, border,hostname,ospf_cost,interfaces):
         self.AS = str(AS)
         self.protocole = protocole
         self.border = border
         self.hostname = hostname
+        self.ospf_cost = ospf_cost
         self.interfaces = interfaces
         self.hn = "hostname " + self.hostname+"\n"
 
@@ -41,6 +42,8 @@ class router() :
 
         for it, add in self.interfaces.items():
             res += G+it[1:]+"\n"+nip+nego+address+add+"\n"+en+prot+nl
+            if self.ospf_cost.get(it) is not None :
+                res += " ipv6 ospf cost " + str(self.ospf_cost[it]) +"\n"+nl
         
         return res
     
@@ -59,25 +62,28 @@ class router() :
             res += " neighbor "+ add + " remote-as "+ remAS+"\n"+nl
         res += " address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
         
-        if self.border != "NULL" :
-            res += "  network 111:1112::/64\n" if self.AS == "1" else "  network 222:2122::/64\n"
+
         for nei in listRAS :
             if nei != self.hostname :
                 res +=   "  neighbor "+nei[1]+"::"+ nei[2]+ " activate\n"
         if self.border != "NULL" :
             add = self.interfaces[self.border][:10] + remRouter
             add = self.interfaces[self.border][:10] + remAS +self.hostname[2:]
-            res += "  neighbor "+ add + " activate\n"+nl 
+            res += "  neighbor "+ add + " activate\n"
+            #res += " aggregate-address " + self.AS*3 + "::/16\n" 
+            res += " network " + self.AS*3 + "::/16\n" 
         res += " exit-address-family\n"+nl
+        
                
         return res
     
     def conn(self):
         res = ""
+        res += "ipv6 route " + self.AS*3 + "::/16 null0\n"
         if self.protocole == "OSPF":
             res += "ipv6 router ospf 2\n router-id "+((self.hostname[1:]+".")*4)[:-1]+"\n"
             if self.border != "NULL" :
-                res += " passive-interface  GigabitEthernet"+self.border[1:]
+                res += " passive-interface  GigabitEthernet"+self.border[1:]+ "\n"
         else :
             res += "ipv6 router rip p"+self.AS+"\n redistribute connected\n"
         return res
@@ -86,7 +92,7 @@ class router() :
 list_router = []
 
 for r in data :
-    list_router.append(router(r["AS"],r["protocole"],r["border"],r["hostname"],r["interfaces"]))
+    list_router.append(router(r["AS"],r["protocole"],r["border"],r["hostname"],r["OSPF_cost"],r["interfaces"]))
     AS[list_router[-1].AS]=[]
 
 for r in list_router :
