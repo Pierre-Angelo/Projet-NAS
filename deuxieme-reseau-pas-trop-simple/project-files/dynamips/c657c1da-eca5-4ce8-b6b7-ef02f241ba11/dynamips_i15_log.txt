@@ -1,0 +1,53 @@
+Jan 17 17:28:51.063 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 17 17:28:51.063 HYPERVISOR: Started on IP = localhost, TCP port = 51466.
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips 
+Jan 17 17:28:51.532 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\c657c1da-eca5-4ce8-b6b7-ef02f241ba11 
+Jan 17 17:28:51.532 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\c657c1da-eca5-4ce8-b6b7-ef02f241ba11
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm create R1 15 c7200 
+Jan 17 17:28:51.532 VM: VM R1 created.
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5014 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: c7200 get_mac_addr R1 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm get_status R1 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-FE 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm set_exec_area R1 64 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm set_ram R1 512 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm set_nvram R1 512 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm get_status R1 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 PA-GE 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm get_status R1 
+Jan 17 17:28:51.532 HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 PA-GE 
+Jan 17 17:28:51.548 HYPERVISOR: exec_cmd: vm get_status R1 
+Jan 17 17:28:51.548 HYPERVISOR: exec_cmd: vm slot_add_binding R1 3 0 PA-GE 
+Jan 17 17:28:51.657 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:28:53.735 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:29:18.408 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:29:38.771 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:29:38.771 HYPERVISOR: exec_cmd: vm rename R1 C1 
+Jan 17 17:29:38.896 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:30:39.779 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:31:13.052 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:32:51.182 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:32:51.713 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:34:00.496 HYPERVISOR: exec_cmd: vm get_status C1 
+Jan 17 17:34:00.512 HYPERVISOR: exec_cmd: vm slot_add_binding C1 4 0 PA-GE 
+Jan 17 17:34:00.512 HYPERVISOR: exec_cmd: vm get_status C1 
+Jan 17 17:34:00.528 HYPERVISOR: exec_cmd: vm slot_add_binding C1 5 0 PA-GE 
+Jan 17 17:34:38.093 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:34:41.126 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:34:56.239 HYPERVISOR: exec_cmd: nio create_udp udp-4f596589-6744-4453-a91a-2de1eb7b9fa5 10134 127.0.0.1 10135 
+Jan 17 17:34:56.489 HYPERVISOR: exec_cmd: vm slot_add_nio_binding C1 1 0 udp-4f596589-6744-4453-a91a-2de1eb7b9fa5 
+Jan 17 17:34:56.489 HYPERVISOR: exec_cmd: vm get_status C1 
+Jan 17 17:35:07.512 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:47:33.756 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:48:16.386 HYPERVISOR: exec_cmd: vm set_ghost_status C1 2 
+Jan 17 17:48:16.401 HYPERVISOR: exec_cmd: vm set_ghost_file C1 C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 17 17:48:16.401 HYPERVISOR: exec_cmd: vm get_status C1 
+Jan 17 17:48:16.417 HYPERVISOR: exec_cmd: vm set_config C1 configs\i15_startup-config.cfg 
+Jan 17 17:48:16.417 HYPERVISOR: exec_cmd: vm start C1 
+Jan 17 17:48:46.793 HYPERVISOR: exec_cmd: vm extract_config C1 
+Jan 17 18:01:36.063 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 18:01:44.472 HYPERVISOR: exec_cmd: vm set_ios C1 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
