@@ -1,6 +1,7 @@
 import json
-with open('intent_file.json','r',encoding='utf-8') as f:
- data = list(json.load(f).values())[0]
+with open('intent_file_net2.json','r',encoding='utf-8') as f:
+ data = list(json.load(f).values())
+
 
 global nl ,t,AS
 nl = "!\n"
@@ -19,11 +20,12 @@ t = [
 ]
 
 class router() :
-    def __init__(self, AS,protocole, border,hostname,interfaces):
+    def __init__(self, AS,protocole, border,hostname,ospf_cost,interfaces):
         self.AS = str(AS)
         self.protocole = protocole
         self.border = border
         self.hostname = hostname
+        self.ospf_cost = ospf_cost
         self.interfaces = interfaces
         self.hn = "hostname " + self.hostname+"\n"
 
@@ -41,6 +43,8 @@ class router() :
 
         for it, add in self.interfaces.items():
             res += G+it[1:]+"\n"+nip+nego+address+add+"\n"+en+prot+nl
+            if self.ospf_cost.get(it) is not None :
+                res += " ipv6 ospf cost " + str(self.ospf_cost[it]) +"\n"+nl
         
         return res
     
@@ -59,25 +63,28 @@ class router() :
             res += " neighbor "+ add + " remote-as "+ remAS+"\n"+nl
         res += " address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
         
-        if self.border != "NULL" :
-            res += "  network 111:1112::/64\n" if self.AS == "1" else "  network 222:2122::/64\n"
+
         for nei in listRAS :
             if nei != self.hostname :
                 res +=   "  neighbor "+nei[1]+"::"+ nei[2]+ " activate\n"
         if self.border != "NULL" :
             add = self.interfaces[self.border][:10] + remRouter
             add = self.interfaces[self.border][:10] + remAS +self.hostname[2:]
-            res += "  neighbor "+ add + " activate\n"+nl 
+            res += "  neighbor "+ add + " activate\n"
+            res += " network " + self.AS*3 + "::/16\n" 
         res += " exit-address-family\n"+nl
+        
                
         return res
     
     def conn(self):
         res = ""
+        if self.border != "NULL" :
+            res += "ipv6 route " + self.AS*3 + "::/16 null0\n"
         if self.protocole == "OSPF":
             res += "ipv6 router ospf 2\n router-id "+((self.hostname[1:]+".")*4)[:-1]+"\n"
             if self.border != "NULL" :
-                res += " passive-interface  GigabitEthernet"+self.border[1:]
+                res += " passive-interface  GigabitEthernet"+self.border[1:]+ "\n"
         else :
             res += "ipv6 router rip p"+self.AS+"\n redistribute connected\n"
         return res
@@ -85,31 +92,18 @@ class router() :
 
 list_router = []
 
-for r in data :
-    list_router.append(router(r["AS"],r["protocole"],r["border"],r["hostname"],r["interfaces"]))
+for r in data[0] :
+    list_router.append(router(r["AS"],r["protocole"],r["border"],r["hostname"],r["OSPF_cost"],r["interfaces"]))
     AS[list_router[-1].AS]=[]
 
 for r in list_router :
     AS[r.AS].append(r.hostname)
 
-fichiers = {"R11" :["434a0746-8448-42ff-b176-11b5d13142d8","1"],
-            "R12" :["11b9fa6d-214c-4845-b6a4-b1db370b87a5","2"],
-            "R13" :["49a7a5f5-a58e-4855-b9f7-3aaa58e3a712","3"],
-            "R14" :["6e7529f7-28cd-42d2-ae28-235ea466b4fa","4"],
-            "R15" :["804e7a1b-92c3-4acb-9b3c-79bc9faabc8b","5"],
-            "R16" :["1b884c37-dbe9-4297-9752-a13c4ff04155","7"],
-            "R17" :["cd7d4c92-9bd7-471b-bf7e-1d0e6ad20034","11"],
-            "R21" :["3f5961df-37d9-4064-8968-f411b50c4b0f","10"],
-            "R22" :["96095d7c-3131-487a-acf4-882bc827c809","8"],
-            "R23" :["80b312b2-9921-41b0-b614-952ce6b3b26f","6"],
-            "R24" :["eb00c665-cc69-4d6f-9da3-0b9430aa9e03","9"],
-            "R25" :["f09bf038-5f96-4513-812d-f87a2fb6d07f","13"],
-            "R26" :["f356ec56-d010-4d5a-99c0-20aeff93d418","12"],
-            "R27" :["2547e6ce-55b0-4f21-a354-4d7c2d06a3ce","14"]}
+fichiers = data[1]["config_files"]
 
 for r in list_router:
     config = t[0]+r.hn+t[1]+ r.genInterface()+r.bgp()+t[2]+r.conn()+t[3]+t[4]
 
-    with open("deuxieme-reseau-pas-trop-simple\project-files\dynamips\\"+fichiers[r.hostname][0]+"\configs\i"+fichiers[r.hostname][1]+"_startup-config.cfg",'w',encoding='utf-8') as f :
+    with open(data[1]["network_name"]+"\project-files\dynamips\\"+fichiers[r.hostname][0]+"\configs\i"+fichiers[r.hostname][1]+"_startup-config.cfg",'w',encoding='utf-8') as f :
         f.write(config)
         
