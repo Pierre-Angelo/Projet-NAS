@@ -1,0 +1,64 @@
+Jan 26 17:19:16.076 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 26 17:19:16.077 HYPERVISOR: Started on IP = localhost, TCP port = 65030.
+Jan 26 17:19:16.570 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 26 17:19:16.571 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips 
+Jan 26 17:19:16.571 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips
+Jan 26 17:19:16.571 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\6a77278b-4af3-4a1e-b4d3-4d719a4c3d37 
+Jan 26 17:19:16.613 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\6a77278b-4af3-4a1e-b4d3-4d719a4c3d37
+Jan 26 17:19:16.614 HYPERVISOR: exec_cmd: vm create R41 4 c7200 
+Jan 26 17:19:16.617 VM: VM R41 created.
+Jan 26 17:19:16.618 HYPERVISOR: exec_cmd: vm set_con_tcp_port R41 5003 
+Jan 26 17:19:16.618 HYPERVISOR: exec_cmd: c7200 get_mac_addr R41 
+Jan 26 17:19:16.619 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 17:19:16.619 HYPERVISOR: exec_cmd: vm slot_add_binding R41 0 0 C7200-IO-FE 
+Jan 26 17:19:16.620 HYPERVISOR: exec_cmd: vm set_disk0 R41 0 
+Jan 26 17:19:16.621 HYPERVISOR: exec_cmd: vm set_exec_area R41 64 
+Jan 26 17:19:16.623 HYPERVISOR: exec_cmd: vm set_ios R41 C:/Users/papey/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 26 17:19:16.623 HYPERVISOR: exec_cmd: c7200 set_mac_addr R41 ca04.24c4.0000 
+Jan 26 17:19:16.624 HYPERVISOR: exec_cmd: vm set_nvram R41 512 
+Jan 26 17:19:16.625 HYPERVISOR: exec_cmd: vm set_ram R41 512 
+Jan 26 17:19:16.626 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 17:19:16.626 HYPERVISOR: exec_cmd: vm slot_add_binding R41 1 0 PA-GE 
+Jan 26 17:19:16.627 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 17:19:16.627 HYPERVISOR: exec_cmd: vm slot_add_binding R41 2 0 PA-GE 
+Jan 26 17:19:16.628 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 17:19:16.629 HYPERVISOR: exec_cmd: vm slot_add_binding R41 3 0 PA-GE 
+Jan 26 17:19:16.629 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 17:19:16.630 HYPERVISOR: exec_cmd: vm slot_add_binding R41 4 0 PA-GE 
+Jan 26 17:19:20.832 HYPERVISOR: exec_cmd: nio create_udp udp-beae4a9c-3abc-46a8-9e90-875097d4882a 10034 127.0.0.1 10035 
+Jan 26 17:19:21.086 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R41 1 0 udp-beae4a9c-3abc-46a8-9e90-875097d4882a 
+Jan 26 17:19:21.087 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 17:19:28.918 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 26 17:19:28.920 VM: VM Ghost created.
+Jan 26 17:19:28.951 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/papey/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 26 17:19:28.952 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 26 17:19:28.953 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 26 17:19:28.954 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Jan 26 17:19:28.955 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 26 17:19:28.987 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Jan 26 17:19:28.988 HYPERVISOR: exec_cmd: vm start Ghost 
+Jan 26 17:19:29.341 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jan 26 17:19:29.351 HYPERVISOR: exec_cmd: vm stop Ghost 
+Jan 26 17:19:29.438 VM: VM Ghost shutdown.
+Jan 26 17:19:29.440 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Jan 26 17:19:29.443 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jan 26 17:19:29.443 VM: VM Ghost destroyed.
+Jan 26 17:19:29.448 HYPERVISOR: exec_cmd: vm set_ghost_status R41 2 
+Jan 26 17:19:29.449 HYPERVISOR: exec_cmd: vm set_ghost_file R41 C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 26 17:19:29.450 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 17:19:29.466 HYPERVISOR: exec_cmd: vm set_config R41 configs\i4_startup-config.cfg 
+Jan 26 17:19:29.467 HYPERVISOR: exec_cmd: vm start R41 
+Jan 26 17:19:59.787 HYPERVISOR: exec_cmd: vm extract_config R41 
+Jan 26 17:35:47.099 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 17:35:47.100 HYPERVISOR: exec_cmd: vm stop R41 
+Jan 26 17:35:47.178 VM: VM R41 shutdown.
+Jan 26 17:35:47.180 HYPERVISOR: exec_cmd: vm extract_config R41 
+Jan 26 17:41:53.220 HYPERVISOR: exec_cmd: vm set_ghost_status R41 2 
+Jan 26 17:41:53.225 HYPERVISOR: exec_cmd: vm set_ghost_file R41 C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 26 17:41:53.227 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 17:41:53.253 HYPERVISOR: exec_cmd: vm set_config R41 configs\i4_startup-config.cfg 
+Jan 26 17:41:53.255 HYPERVISOR: exec_cmd: vm start R41 
+Jan 26 21:10:24.281 HYPERVISOR: exec_cmd: vm get_status R41 
+Jan 26 21:10:24.282 HYPERVISOR: exec_cmd: vm stop R41 
+Jan 26 21:10:24.474 VM: VM R41 shutdown.
+Jan 26 21:10:24.476 HYPERVISOR: exec_cmd: vm extract_config R41 
