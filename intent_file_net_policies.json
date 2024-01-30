@@ -30,7 +30,7 @@
         {
             "AS" : 1,
             "protocole" : "OSPF",
-            "border" : [["G1/0","PEER"]],
+            "border" : [["G1/0","PROVIDER"]],
             "hostname" : "R13",
             "OSPF_cost": {},
             "interfaces" : 
