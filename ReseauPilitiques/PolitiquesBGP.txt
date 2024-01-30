@@ -8,7 +8,7 @@ Politique 1: Je local pref pour gagner argent
 politique 2: 
 -client: j'annonce tout
 -Peer: je lui donne mes clients
--ISP: Je lui donne pas mes isp. Je lui donne pas mes peers
+-ISP: Je lui donne pas mes p. Je lui donne pas mes peers
 
 permit match out communaute
 
