@@ -62,6 +62,7 @@ class router() :
                 remAS = remRouter[0]
                 add = self.interfaces[inter[0]][:10] + remRouter
                 res += " neighbor "+ add + " remote-as "+ remAS+"\n"
+                res
         res += nl+" address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
         
 
@@ -72,12 +73,12 @@ class router() :
             for inter in self.border :
                 remRouter = self.interfaces[inter[0]][6:8] if self.interfaces[inter[0]][4:6] == self.hostname[1:] else self.interfaces[inter[0]][4:6] 
                 add = self.interfaces[inter[0]][:10] + remRouter
-                #add = self.interfaces[inter[0]][:10] + remAS +self.hostname[2:]
                 res += "  neighbor "+ add + " activate\n"
+                if inter[1] != "NULL":
+                    res += "  neighbor "+ add + " route-map " + inter[1] +"_PREF in\n"
             res += "  network " + self.AS*3 + "::/16\n" 
         res += " exit-address-family\n"+nl
-        
-               
+
         return res
     
     def conn(self):
@@ -91,7 +92,23 @@ class router() :
                     res += " passive-interface  GigabitEthernet"+inter[0][1:]+ "\n"
         else :
             res += "ipv6 router rip p"+self.AS+"\n redistribute connected\n"
-        return res
+        
+        if self.border != "NULL" :
+            type_nei = []
+            for inter in self.border :
+                
+                if inter[1] != "NULL" and inter[1] not in type_nei:
+                    loc_pref = 100
+                    if inter[1] == "CLIENT":
+                        loc_pref = 400
+                    elif inter[1] == "PEER":
+                        loc_pref = 300
+                    elif inter[1] == "PROVIDER":
+                        loc_pref = 200  
+                    res += nl*2 + "route-map " + inter[1] + "_PREF permit 10\n"
+                    res += " set local-preference " + str(loc_pref) + "\n"
+                    type_nei.append(inter[1])
+            return res
 
 
 list_router = []
