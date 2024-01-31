@@ -1,5 +1,13 @@
 import json
-with open('intent_file_net_policies.json','r',encoding='utf-8') as f:
+import sys
+
+if len(sys.argv) < 2 :
+    print("usage : python3 generate_config.py [intent file name]")
+    exit()
+
+intent_file_name = sys.argv[1]
+
+with open(intent_file_name,'r',encoding='utf-8') as f:
  data = list(json.load(f).values())
 
 
@@ -61,7 +69,7 @@ class router() :
                 remAS = remRouter[0]
                 add = self.interfaces[inter[0]][:10] + remRouter
                 res += " neighbor "+ add + " remote-as "+ remAS+"\n"
-                res
+
         res += nl+" address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
         
 
@@ -86,7 +94,9 @@ class router() :
         return res
     
     def communities(self):
-        res ="ip community-list standard ClientCommunity permit 1:1\n"
+        res = ""
+        if self.border != "NULL" and self.border[0][1] != "NULL" :
+            res +="ip community-list standard ClientCommunity permit 1:1\n"
         return res
     
     def conn(self): # Internal protocol (ospf/rip)
@@ -132,7 +142,7 @@ class router() :
                         res += " match community " + "ClientCommunity\n"
                     
                     type_nei.append(inter[1])
-            return res
+        return res
 
 
 list_router = []
