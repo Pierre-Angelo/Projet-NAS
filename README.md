@@ -41,3 +41,6 @@ The script generates configuration files for each router and saves them in the s
 ## Customization
 
 You can customize the script to include additional routing protocols, interfaces, or configuration elements as needed by adjusting the Python classes and methods.
+
+## Sources used
+

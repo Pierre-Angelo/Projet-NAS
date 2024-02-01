@@ -94,7 +94,7 @@
             "protocole" : "OSPF",
             "border" : [["G1/0","PEER"],["G2/0","PROVIDER"]],
             "hostname" : "R71",
-            "OSPF_cost": {},
+            "OSPF_cost": {"G4/0" : 10},
             "interfaces" : 
                 {
                     "G1/0" : "170:1271::71/64",
@@ -108,7 +108,7 @@
             "protocole" : "OSPF",
             "border" : "NULL",
             "hostname" : "R72",
-            "OSPF_cost": {"G1/0" : 10},
+            "OSPF_cost": {},
             "interfaces" : 
                 {
                     "G1/0" : "777:7273::72/64",
@@ -118,15 +118,29 @@
         {
             "AS" : 7,
             "protocole" : "OSPF",
-            "border" : "NULL",
+            "border" : [["G2/0","CLIENT"]],
             "hostname" : "R73",
-            "OSPF_cost": {"G1/0" : 10},
+            "OSPF_cost": {"G4/0" : 10},
             "interfaces" : 
                 {
                     "G1/0" : "777:7273::73/64",
+                    "G2/0" : "280:7381::73/64",
                     "G4/0" : "777:7173::73/64"
                 }
+        },
+        {
+            "AS" : 8,
+            "protocole" : "OSPF",
+            "border" : [["G2/0","NULL"]],
+            "hostname" : "R81",
+            "OSPF_cost": {},
+            "interfaces" : 
+                {   
+                    "G1/0" : "888::1/64",
+                    "G2/0" : "280:7381::81/64"
+                }
         }
+
     ],
     "info_files" :
         {
@@ -141,7 +155,9 @@
                     "R71" :["66e318a3-e892-48cf-8d07-1afe8566e227","7"],
                     "R72" :["c905c1b1-70e9-4dbb-bbbf-0fc54bea1bb9","8"],
                     "R73" :["b318d6f5-c32a-4c99-bf9c-1b3f7b43f39c","9"],
-                    "R14" :["56d97af8-2527-4610-8369-d8e76d581e22","10"]
+                    "R14" :["56d97af8-2527-4610-8369-d8e76d581e22","10"],
+                    "R81" :["b739a0f6-598d-4b28-ba98-9eaa9dfcec17","11"]
+
                 }
     }
 
