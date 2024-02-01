@@ -1,7 +1,7 @@
 # Network Automation Project
 
-The 3 main files are `generate_config.py`, `intent_file_net_policies.json` and `reseau_politique_auto\reseau_politique.gns3`.
-If you are an **evaluator**, we recommend only reading sections: **Quick config and lauch**, **Features (summary)** and **Behaviour and main gns3 file structure** (specially solution 1)
+The 3 main files are `generate_config.py`, `intent_file_net_policies.json` and `reseau_politique_auto\reseau_politique.gns3`.<br>
+If you are an **evaluator**, we recommend only reading sections: **Quick config and lauch**, **Features (summary)** and **Behaviour and main gns3 file structure** (specially solution 1).
 
 The objective of this project is to simutlate complex networks using GNS3 to later develop a script to configure each router automatically. For this we will be using ipv6 connections on Cisco routers.
 
@@ -26,19 +26,20 @@ In the terminal, navigate to the project directory and run:
 python3 generate_config.py intent_file_net_policies.json
 ```
 This command generates the startup configuration for each router.   
-Next, open your gns3 file and start all routers. They will automatically load their configuration. Wait for BGP to establish all connections (2.5 minutes). If you see 888::/16 on blue clients' routing tables or 444::/16 and 555::/16 on red client's routing table, you are good to go!
+Next, open your gns3 file and start all routers. They will automatically load their configuration. Wait for BGP to establish all connections (2.5 minutes). <br>
+If you see 888::/16 on blue clients' routing tables or 444::/16 and 555::/16 on red client's routing table, you are good to go!
    
 ## Features (Summary)
-The following features are supported by this project (intent file + script + gns3 folder)
+The following features are supported by this project (intent file + script + gns3 folder).
 
 1. Interface configurations.
 2. RIP protocol support.
 3. OSPF protocol support, including optional OSPF metrics configuration.
-4. Comprehensive BGP configuration:
-  - Establishment of neighbor relationships (internal and external).
-  - Community tagging.
-  - Route advertisement.
-  - Route filtering.
+4. Comprehensive BGP configuration:<br>
+&nbsp; - Establishment of neighbor relationships (internal and external).<br>
+&nbsp; - Community tagging.<br>
+&nbsp; - Route advertisement.<br>
+&nbsp; - Route filtering.<br>
 
 #### Future Development
 - Integration of Telnet for remote management (or not).
@@ -54,33 +55,33 @@ Red has set it's OSPF metrics to avoid the R71-R72 link connection, so every mes
 Red and Blue do not share their inter-As networks. This measure prevents Providers from using and knowing about our network topology.
 However, clients that wish to do networking mapping or troubleshooting have 3 options if they need to bypass this:
 
-1. Advertising their shared network with principal AS (recommended).
+1) Advertising their shared network with principal AS (recommended).
 This will facilitate the usage of other tools such as traceroute and will simplify the handling of commands.
-(You can copy and paste using the corresponding client)
+(You can copy and paste using the corresponding client).<br>
 
-Client 41:
-conf t
-router bgp 4
-address-family ipv6 unicast
-network 140:1141::/64
+&nbsp;&nbsp;Client 41:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;conf t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;router bgp 4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address-family ipv6 unicast<br>
+&nbsp;&nbsp;&nbsp;&nbsp;network 140:1141::/64<br>
 
-Client 51:
-conf t
-router bgp 5
-address-family ipv6 unicast
-network 150:1251::/64
+&nbsp;&nbsp;Client 51:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;conf t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;router bgp 5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address-family ipv6 unicast<br>
+&nbsp;&nbsp;&nbsp;&nbsp;network 150:1251::/64<br>
 
-Client 81:
-conf t
-router bgp 8
-address-family ipv6 unicast
-network 780:7381::/64
+&nbsp;&nbsp;Client 81:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;conf t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;router bgp 8<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address-family ipv6 unicast<br>
+&nbsp;&nbsp;&nbsp;&nbsp;network 780:7381::/64<br>
 
 (This way the route is tagged as client route, which matches the filter).
 
-2. Ping using an internal AS router. This requieres to install and configure an additional router inside the client's Autonomous system.
+2) Ping using an internal AS router. This requieres to install and configure an additional router inside the client's Autonomous system.
 
-3. Ping using the source option.
+3) Ping using the source option.
 
 Examples (only 1 needed):
 R41 # ping <IPprefix> source g2/0
@@ -193,7 +194,7 @@ A configured router with all the option might look like this example:
    "protocole" : "OSPF",
    "border" : [["G1/0","PEER"],["G2/0","CLIENT"]],
    "hostname" : "R61",
-   "OSPF_cost": {"G3/0" : 10,},
+   "OSPF_cost": {"G3/0" : 10},
    "interfaces" : 
       {
          "G1/0" : "160:1361::61/64",
