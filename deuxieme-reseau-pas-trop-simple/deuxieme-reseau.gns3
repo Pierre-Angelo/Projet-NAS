@@ -21,7 +21,7 @@
                 "drawing_id": "22c2313e-897f-4737-a4fa-206bb260d29b",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg width=\"1068.2138838109756\" height=\"497.2340518978644\"><ellipse cx=\"534\" rx=\"535\" cy=\"248\" ry=\"249\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#aa0000\" /></svg>",
+                "svg": "<svg height=\"497.2340518978644\" width=\"1068.2138838109756\"><ellipse cx=\"534\" cy=\"248\" fill=\"#ffffff\" fill-opacity=\"1.0\" rx=\"535\" ry=\"249\" stroke=\"#aa0000\" stroke-width=\"2\" /></svg>",
                 "x": -1195,
                 "y": -50,
                 "z": -1
@@ -30,7 +30,7 @@
                 "drawing_id": "8ad77ea0-df30-4fd2-81d7-c859f8f65b7b",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg width=\"1068.2138838109756\" height=\"497.2340518978644\"><ellipse cx=\"534\" rx=\"535\" cy=\"248\" ry=\"249\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#00aa00\" /></svg>",
+                "svg": "<svg height=\"497.2340518978644\" width=\"1068.2138838109756\"><ellipse cx=\"534\" cy=\"248\" fill=\"#ffffff\" fill-opacity=\"1.0\" rx=\"535\" ry=\"249\" stroke=\"#00aa00\" stroke-width=\"2\" /></svg>",
                 "x": 56,
                 "y": -63,
                 "z": 0
@@ -39,7 +39,7 @@
                 "drawing_id": "0c35f807-50c6-4eaa-b31a-48699f10b99e",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg width=\"80\" height=\"32\"><text font-family=\"MS Shell Dlg 2\" font-size=\"12.0\" font-weight=\"bold\" fill=\"#aa0000\" fill-opacity=\"1.0\">AS 111</text></svg>",
+                "svg": "<svg height=\"32\" width=\"80\"><text fill=\"#aa0000\" fill-opacity=\"1.0\" font-family=\"MS Shell Dlg 2\" font-size=\"12.0\" font-weight=\"bold\">AS 111</text></svg>",
                 "x": -734,
                 "y": 458,
                 "z": 2
@@ -48,7 +48,7 @@
                 "drawing_id": "2d3698e1-2f3f-4034-acfc-8bea61532c58",
                 "locked": false,
                 "rotation": 0,
-                "svg": "<svg width=\"80\" height=\"32\"><text font-family=\"MS Shell Dlg 2\" font-size=\"12.0\" font-weight=\"bold\" fill=\"#00aa00\" fill-opacity=\"1.0\">AS 222</text></svg>",
+                "svg": "<svg height=\"32\" width=\"80\"><text fill=\"#00aa00\" fill-opacity=\"1.0\" font-family=\"MS Shell Dlg 2\" font-size=\"12.0\" font-weight=\"bold\">AS 222</text></svg>",
                 "x": 551,
                 "y": 451,
                 "z": 2
