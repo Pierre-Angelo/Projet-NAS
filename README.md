@@ -1,7 +1,7 @@
 # Network Automation Project
 
 The 3 main files are `generate_config.py`, `intent_file_net_policies.json` and `reseau_politique_auto\reseau_politique.gns3`.<br>
-If you are an **evaluator**, we recommend only reading sections: **Quick config and lauch**, **Features (summary)** and **Behaviour and main gns3 file structure** (specially solution 1).
+If you are an **evaluator**, we recommend only reading sections **Quick config and lauch**, **Features (summary)** and **Behaviour and main gns3 file structure** (specially solution 1).
 
 The objective of this project is to simutlate complex networks using GNS3 to later develop a script to configure each router automatically. For this we will be using ipv6 connections on Cisco routers.
 
