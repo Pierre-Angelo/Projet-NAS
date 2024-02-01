@@ -114,7 +114,7 @@ If you have a better way to explain this, please submit to the git your proposal
 We higly recommend you to analyse the following example, it might clarify it better.   
 
 Example:
-```json
+```java
 {
    {  
       "AS": 1,
@@ -142,13 +142,13 @@ A default loopback0 interface will be assigned an address based on the router's 
 Specify either OSPF or RIP as the IGP. For OSPF, you can set OSPF costs to modify link weights, affecting OSPF metrics.
 
 Example:
-```json
+```java
 {  
    "protocole" : "OSPF",
    "OSPF_cost": {
        "G3/0" : 10,
        "G5/0" : 100
-   }
+       }
 }
 ```
    
@@ -157,9 +157,9 @@ This is optional and you can leave empty brackets if you do not wish to set weig
 
 ### Border, Non-Border routers and BGP
 If it is a non border router (not connected to any external AS), set the broder field as it follows:
-```json
-   {  
-      //... 
+```java
+   {
+      //...
       "border" : "NULL"
       //...
    }
@@ -168,7 +168,7 @@ This will create an iBGP Neighbor session with all adjacent routers.
 
 
 In the case of a Border router, you must indicate in this field wich interfaces connect to exrernal ASes:
-```json
+```java
    {
       //...
       "border" : [["G1/0","NULL"],["G2/0","NULL"]]
