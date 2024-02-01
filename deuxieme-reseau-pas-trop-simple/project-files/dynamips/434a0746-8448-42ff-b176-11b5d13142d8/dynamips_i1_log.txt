@@ -1,0 +1,34 @@
+Jan 17 10:42:20.340 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 17 10:42:20.340 HYPERVISOR: Started on IP = localhost, TCP port = 53386.
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips 
+Jan 17 10:42:20.482 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\434a0746-8448-42ff-b176-11b5d13142d8 
+Jan 17 10:42:20.482 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\434a0746-8448-42ff-b176-11b5d13142d8
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm create R11 1 c7200 
+Jan 17 10:42:20.482 VM: VM R11 created.
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm set_con_tcp_port R11 5000 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: c7200 get_mac_addr R11 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm slot_add_binding R11 0 0 C7200-IO-FE 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm set_disk0 R11 0 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm set_exec_area R11 64 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm set_ios R11 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: c7200 set_mac_addr R11 ca01.4148.0000 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm set_nvram R11 512 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm set_ram R11 512 
+Jan 17 10:42:20.482 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 17 10:42:20.497 HYPERVISOR: exec_cmd: vm slot_add_binding R11 1 0 PA-GE 
+Jan 17 10:42:20.497 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 17 10:42:20.497 HYPERVISOR: exec_cmd: vm slot_add_binding R11 2 0 PA-GE 
+Jan 17 10:42:20.497 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 17 10:42:20.497 HYPERVISOR: exec_cmd: vm slot_add_binding R11 3 0 PA-GE 
+Jan 17 10:42:20.497 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 17 10:42:20.497 HYPERVISOR: exec_cmd: vm slot_add_binding R11 4 0 PA-GE 
+Jan 17 10:42:35.635 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 17 10:42:35.638 HYPERVISOR: exec_cmd: vm extract_config R11 
+Jan 17 10:42:35.641 HYPERVISOR: exec_cmd: vm delete R11 
+Jan 17 10:42:35.641 VM: VM R11 destroyed.
+Jan 17 10:42:35.644 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 17 10:42:35.647 HYPERVISOR: Stopped.
+Jan 17 10:42:35.647 GENERAL: reset done.

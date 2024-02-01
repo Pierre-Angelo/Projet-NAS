@@ -1,0 +1,49 @@
+Jan 26 17:19:16.708 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 26 17:19:16.708 HYPERVISOR: Started on IP = localhost, TCP port = 65034.
+Jan 26 17:19:17.205 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 26 17:19:17.206 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips 
+Jan 26 17:19:17.206 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips
+Jan 26 17:19:17.206 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\26ee2b45-986d-4f7a-a4f0-b99339bf64e1 
+Jan 26 17:19:17.208 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\26ee2b45-986d-4f7a-a4f0-b99339bf64e1
+Jan 26 17:19:17.208 HYPERVISOR: exec_cmd: vm create R51 5 c7200 
+Jan 26 17:19:17.209 VM: VM R51 created.
+Jan 26 17:19:17.211 HYPERVISOR: exec_cmd: vm set_con_tcp_port R51 5004 
+Jan 26 17:19:17.211 HYPERVISOR: exec_cmd: c7200 get_mac_addr R51 
+Jan 26 17:19:17.211 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 17:19:17.212 HYPERVISOR: exec_cmd: vm slot_add_binding R51 0 0 C7200-IO-FE 
+Jan 26 17:19:17.214 HYPERVISOR: exec_cmd: vm set_disk0 R51 0 
+Jan 26 17:19:17.215 HYPERVISOR: exec_cmd: vm set_exec_area R51 64 
+Jan 26 17:19:17.216 HYPERVISOR: exec_cmd: vm set_ios R51 C:/Users/papey/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 26 17:19:17.217 HYPERVISOR: exec_cmd: c7200 set_mac_addr R51 ca05.4d04.0000 
+Jan 26 17:19:17.218 HYPERVISOR: exec_cmd: vm set_nvram R51 512 
+Jan 26 17:19:17.220 HYPERVISOR: exec_cmd: vm set_ram R51 512 
+Jan 26 17:19:17.221 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 17:19:17.221 HYPERVISOR: exec_cmd: vm slot_add_binding R51 1 0 PA-GE 
+Jan 26 17:19:17.222 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 17:19:17.222 HYPERVISOR: exec_cmd: vm slot_add_binding R51 2 0 PA-GE 
+Jan 26 17:19:17.223 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 17:19:17.224 HYPERVISOR: exec_cmd: vm slot_add_binding R51 3 0 PA-GE 
+Jan 26 17:19:17.224 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 17:19:17.225 HYPERVISOR: exec_cmd: vm slot_add_binding R51 4 0 PA-GE 
+Jan 26 17:19:21.147 HYPERVISOR: exec_cmd: nio create_udp udp-2473b66b-d638-4b43-9243-da56410452e5 10040 127.0.0.1 10041 
+Jan 26 17:19:21.398 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R51 2 0 udp-2473b66b-d638-4b43-9243-da56410452e5 
+Jan 26 17:19:21.399 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 17:19:29.517 HYPERVISOR: exec_cmd: vm set_ghost_status R51 2 
+Jan 26 17:19:29.558 HYPERVISOR: exec_cmd: vm set_ghost_file R51 C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 26 17:19:29.559 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 17:19:29.587 HYPERVISOR: exec_cmd: vm set_config R51 configs\i5_startup-config.cfg 
+Jan 26 17:19:29.588 HYPERVISOR: exec_cmd: vm start R51 
+Jan 26 17:20:00.128 HYPERVISOR: exec_cmd: vm extract_config R51 
+Jan 26 17:35:47.100 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 17:35:47.101 HYPERVISOR: exec_cmd: vm stop R51 
+Jan 26 17:35:47.182 VM: VM R51 shutdown.
+Jan 26 17:35:47.186 HYPERVISOR: exec_cmd: vm extract_config R51 
+Jan 26 17:41:53.228 HYPERVISOR: exec_cmd: vm set_ghost_status R51 2 
+Jan 26 17:41:53.255 HYPERVISOR: exec_cmd: vm set_ghost_file R51 C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 26 17:41:53.257 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 17:41:53.286 HYPERVISOR: exec_cmd: vm set_config R51 configs\i5_startup-config.cfg 
+Jan 26 17:41:53.290 HYPERVISOR: exec_cmd: vm start R51 
+Jan 26 21:10:24.325 HYPERVISOR: exec_cmd: vm get_status R51 
+Jan 26 21:10:24.326 HYPERVISOR: exec_cmd: vm stop R51 
+Jan 26 21:10:24.493 VM: VM R51 shutdown.
+Jan 26 21:10:24.495 HYPERVISOR: exec_cmd: vm extract_config R51 

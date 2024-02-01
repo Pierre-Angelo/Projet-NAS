@@ -1,0 +1,55 @@
+Jan 26 17:19:15.432 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 26 17:19:15.433 HYPERVISOR: Started on IP = localhost, TCP port = 65027.
+Jan 26 17:19:15.941 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 26 17:19:15.942 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips 
+Jan 26 17:19:15.942 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips
+Jan 26 17:19:15.942 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\fe6d34ab-0041-4a4b-9490-2e53b8ab27d7 
+Jan 26 17:19:15.981 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\fe6d34ab-0041-4a4b-9490-2e53b8ab27d7
+Jan 26 17:19:15.982 HYPERVISOR: exec_cmd: vm create R13 3 c7200 
+Jan 26 17:19:15.984 VM: VM R13 created.
+Jan 26 17:19:15.986 HYPERVISOR: exec_cmd: vm set_con_tcp_port R13 5002 
+Jan 26 17:19:15.986 HYPERVISOR: exec_cmd: c7200 get_mac_addr R13 
+Jan 26 17:19:15.986 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:19:15.987 HYPERVISOR: exec_cmd: vm slot_add_binding R13 0 0 C7200-IO-FE 
+Jan 26 17:19:15.988 HYPERVISOR: exec_cmd: vm set_disk0 R13 0 
+Jan 26 17:19:15.989 HYPERVISOR: exec_cmd: vm set_exec_area R13 64 
+Jan 26 17:19:15.991 HYPERVISOR: exec_cmd: vm set_ios R13 C:/Users/papey/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 26 17:19:15.991 HYPERVISOR: exec_cmd: c7200 set_mac_addr R13 ca03.0658.0000 
+Jan 26 17:19:15.992 HYPERVISOR: exec_cmd: vm set_nvram R13 512 
+Jan 26 17:19:15.993 HYPERVISOR: exec_cmd: vm set_ram R13 512 
+Jan 26 17:19:15.994 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:19:15.994 HYPERVISOR: exec_cmd: vm slot_add_binding R13 1 0 PA-GE 
+Jan 26 17:19:15.995 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:19:15.995 HYPERVISOR: exec_cmd: vm slot_add_binding R13 2 0 PA-GE 
+Jan 26 17:19:15.996 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:19:15.997 HYPERVISOR: exec_cmd: vm slot_add_binding R13 3 0 PA-GE 
+Jan 26 17:19:15.998 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:19:15.999 HYPERVISOR: exec_cmd: vm slot_add_binding R13 4 0 PA-GE 
+Jan 26 17:19:19.119 HYPERVISOR: exec_cmd: nio create_udp udp-75fc894b-3400-4a4f-a6de-220f52d8571e 10002 127.0.0.1 10003 
+Jan 26 17:19:19.412 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R13 1 0 udp-75fc894b-3400-4a4f-a6de-220f52d8571e 
+Jan 26 17:19:19.413 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:19:20.429 HYPERVISOR: exec_cmd: nio create_udp udp-c9887442-cdf7-430d-b762-6573988bf67d 10020 127.0.0.1 10021 
+Jan 26 17:19:20.434 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R13 2 0 udp-c9887442-cdf7-430d-b762-6573988bf67d 
+Jan 26 17:19:20.435 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:19:20.492 HYPERVISOR: exec_cmd: nio create_udp udp-3ac4f089-3507-40d3-bb38-c2ff5c17f93d 10026 127.0.0.1 10027 
+Jan 26 17:19:20.497 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R13 3 0 udp-3ac4f089-3507-40d3-bb38-c2ff5c17f93d 
+Jan 26 17:19:20.498 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:19:29.450 HYPERVISOR: exec_cmd: vm set_ghost_status R13 2 
+Jan 26 17:19:29.467 HYPERVISOR: exec_cmd: vm set_ghost_file R13 C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 26 17:19:29.467 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:19:29.485 HYPERVISOR: exec_cmd: vm set_config R13 configs\i3_startup-config.cfg 
+Jan 26 17:19:29.487 HYPERVISOR: exec_cmd: vm start R13 
+Jan 26 17:19:59.787 HYPERVISOR: exec_cmd: vm extract_config R13 
+Jan 26 17:35:46.871 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:35:46.872 HYPERVISOR: exec_cmd: vm stop R13 
+Jan 26 17:35:47.067 VM: VM R13 shutdown.
+Jan 26 17:35:47.071 HYPERVISOR: exec_cmd: vm extract_config R13 
+Jan 26 17:41:52.764 HYPERVISOR: exec_cmd: vm set_ghost_status R13 2 
+Jan 26 17:41:52.798 HYPERVISOR: exec_cmd: vm set_ghost_file R13 C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 26 17:41:52.800 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 17:41:52.827 HYPERVISOR: exec_cmd: vm set_config R13 configs\i3_startup-config.cfg 
+Jan 26 17:41:52.827 HYPERVISOR: exec_cmd: vm start R13 
+Jan 26 21:10:24.047 HYPERVISOR: exec_cmd: vm get_status R13 
+Jan 26 21:10:24.049 HYPERVISOR: exec_cmd: vm stop R13 
+Jan 26 21:10:24.264 VM: VM R13 shutdown.
+Jan 26 21:10:24.266 HYPERVISOR: exec_cmd: vm extract_config R13 

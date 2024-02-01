@@ -1,0 +1,42 @@
+Jan 17 10:53:22.716 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 17 10:53:22.716 HYPERVISOR: Started on IP = localhost, TCP port = 54003.
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips 
+Jan 17 10:53:23.200 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\2547e6ce-55b0-4f21-a354-4d7c2d06a3ce 
+Jan 17 10:53:23.200 GENERAL: working_dir=C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\2547e6ce-55b0-4f21-a354-4d7c2d06a3ce
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm create R27 14 c7200 
+Jan 17 10:53:23.200 VM: VM R27 created.
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm set_con_tcp_port R27 5013 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: c7200 get_mac_addr R27 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm get_status R27 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm slot_add_binding R27 0 0 C7200-IO-FE 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm set_disk0 R27 0 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm set_exec_area R27 64 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm set_ios R27 C:/Users/Wissam/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: c7200 set_mac_addr R27 ca0e.3698.0000 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm set_nvram R27 512 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm set_ram R27 512 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm get_status R27 
+Jan 17 10:53:23.200 HYPERVISOR: exec_cmd: vm slot_add_binding R27 1 0 PA-GE 
+Jan 17 10:53:23.216 HYPERVISOR: exec_cmd: vm get_status R27 
+Jan 17 10:53:23.216 HYPERVISOR: exec_cmd: vm slot_add_binding R27 2 0 PA-GE 
+Jan 17 10:53:23.216 HYPERVISOR: exec_cmd: vm get_status R27 
+Jan 17 10:53:23.216 HYPERVISOR: exec_cmd: vm slot_add_binding R27 3 0 PA-GE 
+Jan 17 10:53:23.216 HYPERVISOR: exec_cmd: vm get_status R27 
+Jan 17 10:53:23.216 HYPERVISOR: exec_cmd: vm slot_add_binding R27 4 0 PA-GE 
+Jan 17 10:53:27.976 HYPERVISOR: exec_cmd: nio create_udp udp-a78e5b45-9168-434f-a4ce-40dd241a7256 10088 127.0.0.1 10089 
+Jan 17 10:53:28.495 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R27 3 0 udp-a78e5b45-9168-434f-a4ce-40dd241a7256 
+Jan 17 10:53:28.495 HYPERVISOR: exec_cmd: vm get_status R27 
+Jan 17 10:53:29.201 HYPERVISOR: exec_cmd: nio create_udp udp-0c8a3ca5-798a-410f-8675-2e41575383d6 10112 127.0.0.1 10113 
+Jan 17 10:53:29.201 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R27 4 0 udp-0c8a3ca5-798a-410f-8675-2e41575383d6 
+Jan 17 10:53:29.201 HYPERVISOR: exec_cmd: vm get_status R27 
+Jan 17 10:53:29.610 HYPERVISOR: exec_cmd: nio create_udp udp-e2a2b2ad-9908-4213-91e8-1f2752d6e607 10130 127.0.0.1 10131 
+Jan 17 10:53:29.610 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R27 1 0 udp-e2a2b2ad-9908-4213-91e8-1f2752d6e607 
+Jan 17 10:53:29.610 HYPERVISOR: exec_cmd: vm get_status R27 
+Jan 17 10:53:44.671 HYPERVISOR: exec_cmd: vm set_ghost_status R27 2 
+Jan 17 10:53:44.671 HYPERVISOR: exec_cmd: vm set_ghost_file R27 C:\Users\Wissam\Documents\3TC\PRR\ProjetGNS3-grp19\deuxieme-reseau-pas-trop-simple\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 17 10:53:44.671 HYPERVISOR: exec_cmd: vm get_status R27 
+Jan 17 10:53:44.686 HYPERVISOR: exec_cmd: vm set_config R27 configs\i14_startup-config.cfg 
+Jan 17 10:53:44.686 HYPERVISOR: exec_cmd: vm start R27 
+Jan 17 10:54:15.025 HYPERVISOR: exec_cmd: vm extract_config R27 

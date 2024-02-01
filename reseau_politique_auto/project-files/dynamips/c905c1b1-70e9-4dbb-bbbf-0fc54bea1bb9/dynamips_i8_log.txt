@@ -1,0 +1,42 @@
+Jan 26 17:19:18.536 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 26 17:19:18.537 HYPERVISOR: Started on IP = localhost, TCP port = 65044.
+Jan 26 17:19:19.048 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 26 17:19:19.049 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips 
+Jan 26 17:19:19.049 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips
+Jan 26 17:19:19.050 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c905c1b1-70e9-4dbb-bbbf-0fc54bea1bb9 
+Jan 26 17:19:19.050 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c905c1b1-70e9-4dbb-bbbf-0fc54bea1bb9
+Jan 26 17:19:19.050 HYPERVISOR: exec_cmd: vm create R81 8 c7200 
+Jan 26 17:19:19.052 VM: VM R81 created.
+Jan 26 17:19:19.053 HYPERVISOR: exec_cmd: vm set_con_tcp_port R81 5007 
+Jan 26 17:19:19.054 HYPERVISOR: exec_cmd: c7200 get_mac_addr R81 
+Jan 26 17:19:19.054 HYPERVISOR: exec_cmd: vm get_status R81 
+Jan 26 17:19:19.055 HYPERVISOR: exec_cmd: vm slot_add_binding R81 0 0 C7200-IO-FE 
+Jan 26 17:19:19.056 HYPERVISOR: exec_cmd: vm set_disk0 R81 0 
+Jan 26 17:19:19.057 HYPERVISOR: exec_cmd: vm set_exec_area R81 64 
+Jan 26 17:19:19.059 HYPERVISOR: exec_cmd: vm set_ios R81 C:/Users/papey/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 26 17:19:19.060 HYPERVISOR: exec_cmd: c7200 set_mac_addr R81 ca08.5978.0000 
+Jan 26 17:19:19.062 HYPERVISOR: exec_cmd: vm set_nvram R81 512 
+Jan 26 17:19:19.063 HYPERVISOR: exec_cmd: vm set_ram R81 512 
+Jan 26 17:19:19.064 HYPERVISOR: exec_cmd: vm get_status R81 
+Jan 26 17:19:19.064 HYPERVISOR: exec_cmd: vm slot_add_binding R81 1 0 PA-GE 
+Jan 26 17:19:19.065 HYPERVISOR: exec_cmd: vm get_status R81 
+Jan 26 17:19:19.066 HYPERVISOR: exec_cmd: vm slot_add_binding R81 2 0 PA-GE 
+Jan 26 17:19:19.067 HYPERVISOR: exec_cmd: vm get_status R81 
+Jan 26 17:19:19.067 HYPERVISOR: exec_cmd: vm slot_add_binding R81 3 0 PA-GE 
+Jan 26 17:19:19.068 HYPERVISOR: exec_cmd: vm get_status R81 
+Jan 26 17:19:19.069 HYPERVISOR: exec_cmd: vm slot_add_binding R81 4 0 PA-GE 
+Jan 26 17:19:21.519 HYPERVISOR: exec_cmd: nio create_udp udp-b96cddcf-f5cb-4e15-9b9e-37a163f89544 10052 127.0.0.1 10053 
+Jan 26 17:19:21.785 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R81 3 0 udp-b96cddcf-f5cb-4e15-9b9e-37a163f89544 
+Jan 26 17:19:21.786 HYPERVISOR: exec_cmd: vm get_status R81 
+Jan 26 17:35:47.153 HYPERVISOR: exec_cmd: vm get_status R81 
+Jan 26 17:35:47.154 HYPERVISOR: exec_cmd: vm extract_config R81 
+Jan 26 17:41:53.788 HYPERVISOR: exec_cmd: vm set_ghost_status R81 2 
+Jan 26 17:41:53.790 HYPERVISOR: exec_cmd: vm set_ghost_file R81 C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 26 17:41:53.791 HYPERVISOR: exec_cmd: vm get_status R81 
+Jan 26 17:41:53.817 HYPERVISOR: exec_cmd: vm set_config R81 configs\i8_startup-config.cfg 
+Jan 26 17:41:53.817 HYPERVISOR: exec_cmd: vm start R81 
+Jan 26 17:42:29.489 HYPERVISOR: exec_cmd: vm extract_config R81 
+Jan 26 21:10:24.512 HYPERVISOR: exec_cmd: vm get_status R81 
+Jan 26 21:10:24.513 HYPERVISOR: exec_cmd: vm stop R81 
+Jan 26 21:10:24.722 VM: VM R81 shutdown.
+Jan 26 21:10:24.724 HYPERVISOR: exec_cmd: vm extract_config R81 

@@ -1,0 +1,48 @@
+Jan 26 17:19:17.941 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 26 17:19:17.942 HYPERVISOR: Started on IP = localhost, TCP port = 65040.
+Jan 26 17:19:18.439 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 26 17:19:18.439 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips 
+Jan 26 17:19:18.440 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips
+Jan 26 17:19:18.440 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\66e318a3-e892-48cf-8d07-1afe8566e227 
+Jan 26 17:19:18.441 GENERAL: working_dir=C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\66e318a3-e892-48cf-8d07-1afe8566e227
+Jan 26 17:19:18.441 HYPERVISOR: exec_cmd: vm create R71 7 c7200 
+Jan 26 17:19:18.443 VM: VM R71 created.
+Jan 26 17:19:18.444 HYPERVISOR: exec_cmd: vm set_con_tcp_port R71 5006 
+Jan 26 17:19:18.445 HYPERVISOR: exec_cmd: c7200 get_mac_addr R71 
+Jan 26 17:19:18.446 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:19:18.446 HYPERVISOR: exec_cmd: vm slot_add_binding R71 0 0 C7200-IO-FE 
+Jan 26 17:19:18.447 HYPERVISOR: exec_cmd: vm set_disk0 R71 0 
+Jan 26 17:19:18.448 HYPERVISOR: exec_cmd: vm set_exec_area R71 64 
+Jan 26 17:19:18.450 HYPERVISOR: exec_cmd: vm set_ios R71 C:/Users/papey/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 26 17:19:18.450 HYPERVISOR: exec_cmd: c7200 set_mac_addr R71 ca07.4844.0000 
+Jan 26 17:19:18.451 HYPERVISOR: exec_cmd: vm set_nvram R71 512 
+Jan 26 17:19:18.452 HYPERVISOR: exec_cmd: vm set_ram R71 512 
+Jan 26 17:19:18.453 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:19:18.453 HYPERVISOR: exec_cmd: vm slot_add_binding R71 1 0 PA-GE 
+Jan 26 17:19:18.454 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:19:18.454 HYPERVISOR: exec_cmd: vm slot_add_binding R71 2 0 PA-GE 
+Jan 26 17:19:18.455 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:19:18.455 HYPERVISOR: exec_cmd: vm slot_add_binding R71 3 0 PA-GE 
+Jan 26 17:19:18.456 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:19:18.457 HYPERVISOR: exec_cmd: vm slot_add_binding R71 4 0 PA-GE 
+Jan 26 17:19:19.755 HYPERVISOR: exec_cmd: nio create_udp udp-34fe278d-43b4-4cca-b10d-0bf27538ecc6 10010 127.0.0.1 10011 
+Jan 26 17:19:20.024 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R71 2 0 udp-34fe278d-43b4-4cca-b10d-0bf27538ecc6 
+Jan 26 17:19:20.025 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:19:20.069 HYPERVISOR: exec_cmd: nio create_udp udp-90260369-a9b9-4154-b0f3-02a445546efc 10014 127.0.0.1 10015 
+Jan 26 17:19:20.122 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R71 1 0 udp-90260369-a9b9-4154-b0f3-02a445546efc 
+Jan 26 17:19:20.123 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:19:21.505 HYPERVISOR: exec_cmd: nio create_udp udp-06a7f284-6803-4c9a-9a5b-b7a86a47cf35 10050 127.0.0.1 10051 
+Jan 26 17:19:21.510 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R71 3 0 udp-06a7f284-6803-4c9a-9a5b-b7a86a47cf35 
+Jan 26 17:19:21.511 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:35:47.147 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:35:47.148 HYPERVISOR: exec_cmd: vm extract_config R71 
+Jan 26 17:41:53.715 HYPERVISOR: exec_cmd: vm set_ghost_status R71 2 
+Jan 26 17:41:53.740 HYPERVISOR: exec_cmd: vm set_ghost_file R71 C:\Users\papey\OneDrive\Bureau\INSA\PRR\ProjetGNS3-grp19\reseau_politique_auto\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 26 17:41:53.746 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 17:41:53.778 HYPERVISOR: exec_cmd: vm set_config R71 configs\i7_startup-config.cfg 
+Jan 26 17:41:53.782 HYPERVISOR: exec_cmd: vm start R71 
+Jan 26 17:42:24.243 HYPERVISOR: exec_cmd: vm extract_config R71 
+Jan 26 21:10:24.493 HYPERVISOR: exec_cmd: vm get_status R71 
+Jan 26 21:10:24.493 HYPERVISOR: exec_cmd: vm stop R71 
+Jan 26 21:10:24.724 VM: VM R71 shutdown.
+Jan 26 21:10:24.728 HYPERVISOR: exec_cmd: vm extract_config R71 

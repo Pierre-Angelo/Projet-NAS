@@ -1,0 +1,19 @@
+Brache d'essai bgp
+Local pref (mas mejor)
+-Client: il me paye pour recevoir et pour envoyer 300
+-Un peer: acuerdo mutuo para cortar un triangulo  150
+-Un ISP: je lui paye pour envoyer et recevoir 50
+
+Politique 1: Je local pref pour gagner argent
+politique 2: 
+-client: j'annonce tout
+-Peer: je lui donne mes clients
+-ISP: Je lui donne pas mes p. Je lui donne pas mes peers
+
+permit match out communaute
+
+route map
+net....
+
+
+33:127

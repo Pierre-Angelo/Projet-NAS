@@ -1,0 +1,166 @@
+{
+    "routeurs" :  [ 
+        {
+            "AS" : 1,
+            "protocole" : "RIP",
+            "border" : [["G1/0","CLIENT"]],
+            "hostname" : "R11",
+            "OSPF_cost": {},  
+            "interfaces" : 
+                {
+                    "G1/0" : "140:1141::11/64",
+                    "G2/0" : "111:1114::11/64",
+                    "G3/0" : "111:1113::11/64"
+                }     
+        },
+        {
+            "AS" : 1,
+            "protocole" : "RIP",
+            "border" : [["G1/0","PEER"],["G3/0","CLIENT"]],
+            "hostname" : "R12",
+            "OSPF_cost": {},
+            "interfaces" : 
+                {
+                    "G1/0" : "170:1271::12/64",
+                    "G2/0" : "111:1213::12/64",
+                    "G3/0" : "150:1251::12/64",
+                    "G4/0" : "111:1214::12/64"
+                }
+        }, 
+        {
+            "AS" : 1,
+            "protocole" : "RIP",
+            "border" : [["G1/0","PROVIDER"]],
+            "hostname" : "R13",
+            "OSPF_cost": {},
+            "interfaces" : 
+                {
+                    "G1/0" : "160:1361::13/64",
+                    "G2/0" : "111:1213::13/64",
+                    "G3/0" : "111:1113::13/64"
+                }
+        },
+        {
+            "AS" : 1,
+            "protocole" : "RIP",
+            "border" : "NULL",
+            "hostname" : "R14",
+            "OSPF_cost": {},
+            "interfaces" : 
+                {
+                    "G2/0" : "111:1114::14/64",
+                    "G4/0" : "111:1214::14/64"
+                }
+        },
+        {
+            "AS" : 4,
+            "protocole" : "OSPF",
+            "border" : [["G1/0","NULL"]],
+            "hostname" : "R41",
+            "OSPF_cost": {},
+            "interfaces" : 
+                {
+                    "G1/0" : "140:1141::41/64",
+                    "G2/0" : "444::1/64"
+                }
+        },
+        {
+            "AS" : 5,
+            "protocole" : "OSPF",
+            "border" : [["G3/0","NULL"]],
+            "hostname" : "R51",
+            "OSPF_cost": {},  
+            "interfaces" : 
+                {
+                    "G2/0" : "555::1/64",
+                    "G3/0" : "150:1251::51/64"
+                }
+        },
+        {
+            "AS" : 6,
+            "protocole" : "OSPF",
+            "border" : [["G1/0","CLIENT"],["G2/0","CLIENT"]],
+            "hostname" : "R61",
+            "OSPF_cost": {},
+            "interfaces" : 
+                {
+                    "G1/0" : "160:1361::61/64",
+                    "G2/0" : "670:6171::61/64",
+                    "G3/0" : "666::1/64"
+                }
+        },
+        {
+            "AS" : 7,
+            "protocole" : "OSPF",
+            "border" : [["G1/0","PEER"],["G2/0","PROVIDER"]],
+            "hostname" : "R71",
+            "OSPF_cost": {"G4/0" : 10},
+            "interfaces" : 
+                {
+                    "G1/0" : "170:1271::71/64",
+                    "G2/0" : "670:6171::71/64",
+                    "G3/0" : "777:7172::71/64",
+                    "G4/0" : "777:7173::71/64"
+                }
+        },
+        {
+            "AS" : 7,
+            "protocole" : "OSPF",
+            "border" : "NULL",
+            "hostname" : "R72",
+            "OSPF_cost": {},
+            "interfaces" : 
+                {
+                    "G1/0" : "777:7273::72/64",
+                    "G3/0" : "777:7172::72/64"
+                }
+        },
+        {
+            "AS" : 7,
+            "protocole" : "OSPF",
+            "border" : [["G2/0","CLIENT"]],
+            "hostname" : "R73",
+            "OSPF_cost": {"G4/0" : 10},
+            "interfaces" : 
+                {
+                    "G1/0" : "777:7273::73/64",
+                    "G2/0" : "780:7381::73/64",
+                    "G4/0" : "777:7173::73/64"
+                }
+        },
+        {
+            "AS" : 8,
+            "protocole" : "OSPF",
+            "border" : [["G2/0","NULL"]],
+            "hostname" : "R81",
+            "OSPF_cost": {},
+            "interfaces" : 
+                {   
+                    "G1/0" : "888::1/64",
+                    "G2/0" : "280:7381::81/64"
+                }
+        }
+
+    ],
+    "info_files" :
+        {
+            "network_name": "reseau_politique_auto",
+            "config_files": {
+                    "R11" :["f4049be9-6cdd-4fa5-bdb6-af7e74535f40","1"],
+                    "R12" :["c2c11c7d-f514-4ee7-abb0-346109ed0810","2"],
+                    "R13" :["fe6d34ab-0041-4a4b-9490-2e53b8ab27d7","3"],
+                    "R41" :["6a77278b-4af3-4a1e-b4d3-4d719a4c3d37","4"],
+                    "R51" :["26ee2b45-986d-4f7a-a4f0-b99339bf64e1","5"],
+                    "R61" :["54510fdb-2db8-48fa-96dc-a5111c7512a9","6"],
+                    "R71" :["66e318a3-e892-48cf-8d07-1afe8566e227","7"],
+                    "R72" :["c905c1b1-70e9-4dbb-bbbf-0fc54bea1bb9","8"],
+                    "R73" :["b318d6f5-c32a-4c99-bf9c-1b3f7b43f39c","9"],
+                    "R14" :["56d97af8-2527-4610-8369-d8e76d581e22","10"],
+                    "R81" :["b739a0f6-598d-4b28-ba98-9eaa9dfcec17","11"]
+
+                }
+    }
+
+}
+    
+    
