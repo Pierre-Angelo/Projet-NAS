@@ -81,12 +81,12 @@ This will facilitate the usage of other tools such as traceroute and will simpli
 
 2) Ping using an internal AS router. This requieres to install and configure an additional router inside the client's Autonomous system.
 
-3) Ping using the source option.
+3) Ping using the source option.<br>
 
-Examples (only 1 needed):
-R41 # ping <IPprefix> source g2/0
-R51 # ping <IPprefix> source g2/0
-R81 # ping <IPprefix> source g1/0
+Examples (only 1 needed):<br>
+R41 # ping <IPprefix> source g2/0<br>
+R51 # ping <IPprefix> source g2/0<br>
+R81 # ping <IPprefix> source g1/0<br>
 
 This service is not available to peers and providers.
 
