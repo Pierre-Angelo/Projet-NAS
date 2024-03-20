@@ -1,11 +1,11 @@
 import json
-import sys
-
+#import sys
+"""
 if len(sys.argv) < 2 :
     print("usage : python3 generate_config.py [intent file name]")
-    exit()
+    exit()"""
 
-intent_file_name = sys.argv[1]
+intent_file_name = ".\\intent_file_net_policies.json" #sys.argv[1]
 
 with open(intent_file_name,'r',encoding='utf-8') as f:
  data = list(json.load(f).values())
