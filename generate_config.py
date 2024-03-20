@@ -10,6 +10,13 @@ intent_file_name = sys.argv[1]
 with open(intent_file_name,'r',encoding='utf-8') as f:
  data = list(json.load(f).values())
 
+def mask(i) :
+    if (i == 32) :
+        return "255.255.255.255"
+    elif (i == 30) :
+        return "255.255.255.252"
+    else :
+        return "nop"
 
 global nl ,t,AS
 nl = "!\n"
@@ -18,8 +25,8 @@ t = [
     nl*9+"\n"+nl+"! Last configuration change at 11:19:13 UTC Fri Dec 22 2023\n"+nl+"version 15.2\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\n"+nl ,
     nl+"boot-start-marker\nboot-end-marker\n"+3*nl+
     "no aaa new-model\nno ip icmp rate-limit unreachable\nip cef\n"+
-    6*nl+"no ip domain lookup\nipv6 unicast-routing\nipv6 cef\n"+
-    2*nl+"multilink bundle-name authenticated\n"+nl*9+
+    6*nl+"no ip domain lookup\nno ipv6 cef\n"+
+    2*nl+"mpls label protocol ldp\nmultilink bundle-name authenticated\n"+nl*9+
     "ip tcp synwait-time 5\n"+12*nl,
     4*nl+"control-plane\n"+2*nl+
     "line con 0\n exec-timeout 0 0\n privilege level 15\n logging synchronous\n stopbits 1\n",
@@ -37,21 +44,20 @@ class router() :
         self.hn = "hostname " + self.hostname+"\n"
     
     def genInterface(self): 
-        l0 = self.hostname[1]+"::"+ self.hostname[2]+"/128\n"
+        l0 = self.hostname[1]+"."+ self.hostname[2]+".0.1 " + mask(32) + "\n"
         G = "interface GigabitEthernet"
-        nip =" no ip address\n"
         nego = " negotiation auto\n"
-        address = " ipv6 address "
-        en = " ipv6 enable\n"
+        address = " ip address "
         endProt = " "+self.AS+" area 0\n" if self.protocole == "OSPF" else " p"+self.AS+" enable\n"
-        prot = " ipv6 " + self.protocole.lower() +endProt
+        prot = " ip " + self.protocole.lower() +endProt
         fast = "interface FastEthernet0/0\n no ip address\n shutdown\n duplex full"
-        res = "interface Loopback0\n" + nip+address+l0+en+prot+nl+fast+"\n"+nl
+        res = "interface Loopback0\n" + address+l0+prot+nl+fast+"\n"+nl
 
         for it, add in self.interfaces.items():
-            res += G+it[1:]+"\n"+nip+nego+address+add+"\n"+en+prot+nl
+            mad = add.split("/")
+            res += G+it[1:]+"\n"+nego+address+mad[0]+" "+mask(int(mad[1]))+"\n"+(prot + " mpls ip\n" if add.split(".")[0] == self.AS else "")+nl
             if self.ospf_cost.get(it) is not None :
-                res += " ipv6 ospf cost " + str(self.ospf_cost[it]) +"\n"+nl
+                res += " ip ospf cost " + str(self.ospf_cost[it]) +"\n"+nl
         
         return res
     
@@ -102,17 +108,17 @@ class router() :
     def conn(self): # Internal protocol (ospf/rip)
         res = ""
         res += "ip forward-protocol nd\n"+nl
-        res += self.communities() + nl
+        # res += self.communities() + nl
         res += "no ip http server\nno ip http secure-server\n"+nl
-        if self.border != "NULL" :
-            res += "ipv6 route " + self.AS*3 + "::/16 null0\n"
+        # if self.border != "NULL" :
+            # res += "ipv6 route " + self.AS*3 + "::/16 null0\n"
         if self.protocole == "OSPF":
-            res += "ipv6 router ospf "+self.AS+"\n router-id "+((self.hostname[1:]+".")*4)[:-1]+"\n"
-            if self.border != "NULL" :
-                for inter in self.border :
-                    res += " passive-interface  GigabitEthernet"+inter[0][1:]+ "\n"
+            res += "router ospf "+self.AS+"\n"
+            # if self.border != "NULL" :
+                # for inter in self.border :
+                    # res += " passive-interface  GigabitEthernet"+inter[0][1:]+ "\n"
         else :
-            res += "ipv6 router rip p"+self.AS+"\n redistribute connected\n"
+            res += "router rip p"+self.AS+"\n redistribute connected\n"
         return res
         
     def route_map(self):
@@ -157,8 +163,8 @@ for r in list_router :
 fichiers = data[1]["config_files"]
 
 for r in list_router:
-    config = t[0]+r.hn+t[1]+ r.genInterface()+r.bgp()+r.conn()+r.route_map()+t[2]+t[3]
+    config = t[0]+r.hn+t[1]+ r.genInterface()+r.conn()+t[2]+t[3]
 
-    with open(data[1]["network_name"]+"\project-files\dynamips\\"+fichiers[r.hostname][0]+"\configs\i"+fichiers[r.hostname][1]+"_startup-config.cfg",'w',encoding='utf-8') as f :
+    with open(data[1]["network_name"]+"\\project-files\\dynamips\\"+fichiers[r.hostname][0]+"\\configs\\i"+fichiers[r.hostname][1]+"_startup-config.cfg",'w',encoding='utf-8') as f :
         f.write(config)
         
