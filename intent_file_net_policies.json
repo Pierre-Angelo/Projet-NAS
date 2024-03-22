@@ -3,7 +3,7 @@
         {
             "AS" : 1,
             "protocole" : "OSPF",
-            "border" : [["G1/0","CLIENT"],["G4/0","CLIENT"]],
+            "border" : [["G1/0","VRF:Bleu:1"],["G4/0","VRF:Rouge:2"]],
             "hostname" : "R11",
             "OSPF_cost": {},  
             "interfaces" : 
@@ -16,7 +16,7 @@
         {
             "AS" : 1,
             "protocole" : "OSPF",
-            "border" : [["G1/0","CLIENT"],["G3/0","CLIENT"]],
+            "border" : [["G1/0","VRF:Bleu:1"],["G3/0","VRF:Rouge:2"]],
             "hostname" : "R12",
             "OSPF_cost": {},
             "interfaces" : 
@@ -58,7 +58,8 @@
             "OSPF_cost": {},
             "interfaces" : 
                 {
-                    "G1/0" : "14.41.0.2/30"
+                    "G1/0" : "14.41.0.2/30",
+                    "G4/0" : "4.41.0.1/30"
                 }
         },
         {
@@ -69,7 +70,8 @@
             "OSPF_cost": {},  
             "interfaces" : 
                 {
-                    "G3/0" : "15.51.0.2/30"
+                    "G3/0" : "15.51.0.2/30",
+                    "G4/0" : "5.51.0.1/30"
                 }
         },
         {
@@ -80,7 +82,8 @@
             "OSPF_cost": {},
             "interfaces" : 
                 {
-                    "G1/0" : "16.61.0.2/30"
+                    "G1/0" : "16.61.0.2/30",
+                    "G4/0" : "6.61.0.1/30"
                 }
         },
         {
@@ -91,7 +94,8 @@
             "OSPF_cost": {},
             "interfaces" : 
                 {
-                    "G1/0" : "17.71.0.2/30"
+                    "G1/0" : "17.71.0.2/30",
+                    "G4/0" : "7.71.0.1/30"
                 }
         }
 

@@ -23,7 +23,7 @@ nl = "!\n"
 AS ={}
 t = [
     nl*9+"\n"+nl+"! Last configuration change at 11:19:13 UTC Fri Dec 22 2023\n"+nl+"version 15.2\nservice timestamps debug datetime msec\nservice timestamps log datetime msec\n"+nl ,
-    nl+"boot-start-marker\nboot-end-marker\n"+3*nl+
+    nl+"boot-start-marker\nboot-end-marker\n"+2*nl,
     "no aaa new-model\nno ip icmp rate-limit unreachable\nip cef\n"+
     6*nl+"no ip domain lookup\nno ipv6 cef\n"+
     2*nl+"mpls label protocol ldp\nmultilink bundle-name authenticated\n"+nl*9+
@@ -55,7 +55,12 @@ class router() :
 
         for it, add in self.interfaces.items():
             mad = add.split("/")
-            res += G+it[1:]+"\n"+nego+address+mad[0]+" "+mask(int(mad[1]))+"\n"+(prot + " mpls ip\n" if add.split(".")[0] == self.AS else "")+nl
+            vrf = ""
+            if self.border != "NULL" :
+                for b in self.border :
+                    if b[0] == it and b[1] != "NULL" :
+                        vrf = " vrf forwarding " + b[1].split(":")[1] + "\n"
+            res += G+it[1:]+"\n"+vrf+nego+address+mad[0]+" "+mask(int(mad[1]))+"\n"+(prot + " mpls ip\n" if add.split(".")[0] == self.AS else "")+nl
             if self.ospf_cost.get(it) is not None :
                 res += " ip ospf cost " + str(self.ospf_cost[it]) +"\n"+nl
         
@@ -63,28 +68,31 @@ class router() :
     
     def bgp(self) : # bgp, duh
         listRAS = AS[self.AS]
-        res = "router bgp " +self.AS+"\n bgp router-id "+((self.hostname[1:]+".")*4)[:-1]+"\n bgp log-neighbor-changes\n no bgp default ipv4-unicast\n"
-        for nei in listRAS :
-            if nei != self.hostname :
-                res+= " neighbor "+nei[1]+"::"+ nei[2]+" remote-as "+ self.AS+"\n"
-                res+= " neighbor "+nei[1]+"::"+ nei[2]+" update-source Loopback0\n"
-        
+        res = "router bgp " +self.AS+"\n bgp router-id "+(self.AS+".")*3+self.hostname[2]+"\n bgp log-neighbor-changes\n"
+
+        # i-bgp
         if self.border != "NULL" :
+            for nei in listRAS :
+                if nei != self.hostname and nei[1] != "NULL":
+                    res+= " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" remote-as "+ self.AS+"\n"
+                    res+= " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" update-source Loopback0\n"
+        
+        # e-bgp
+        """if self.border != "NULL" :
             for inter in self.border :
                 remRouter = self.interfaces[inter[0]][6:8] if self.interfaces[inter[0]][4:6] == self.hostname[1:] else self.interfaces[inter[0]][4:6] 
                 remAS = remRouter[0]
                 add = self.interfaces[inter[0]][:10] + remRouter
-                res += " neighbor "+ add + " remote-as "+ remAS+"\n"
+                res += " neighbor "+ add + " remote-as "+ remAS+"\n" """
 
-        res += nl+" address-family ipv4\n exit-address-family\n"+nl+ " address-family ipv6\n"
-        
 
         for nei in listRAS :
-            if nei != self.hostname :
-                res +=   "  neighbor "+nei[1]+"::"+ nei[2]+ " activate\n"
-                res +=   "  neighbor "+nei[1]+"::"+ nei[2]+ " send-community\n"
+            if nei != self.hostname and self.border != "NULL" and nei[1] != "NULL":
+                res += nl+" address-family vpnv4\n"
+                res +=   "  neighbor "+self.AS+"."+nei[0][2]+".0.1"+ " activate\n"
+                res +=   "  neighbor "+self.AS+"."+nei[0][2]+".0.1"+ " send-community\n"
                 
-        if self.border != "NULL" :
+        """if self.border != "NULL" :
             for inter in self.border :
                 remRouter = self.interfaces[inter[0]][6:8] if self.interfaces[inter[0]][4:6] == self.hostname[1:] else self.interfaces[inter[0]][4:6] 
                 add = self.interfaces[inter[0]][:10] + remRouter
@@ -95,7 +103,7 @@ class router() :
                     if inter[1] != "CLIENT":
                         res += "  neighbor "+ add + " route-map FILTER_TOWARDS_" + inter[1] +" out\n"
 
-            res += "  network " + self.AS*3 + "::/16\n" 
+            res += "  network " + self.AS*3 + "::/16\n" """
         res += " exit-address-family\n"+nl
         return res
     
@@ -149,6 +157,21 @@ class router() :
                     
                     type_nei.append(inter[1])
         return res
+    
+    def vrf(self) :
+        res = ""
+        if self.border != "NULL" :
+            for it in self.border :
+                if it[1] != "NULL" :
+                    vrf = it[1].split(":")
+                    if vrf[0] == "VRF" :
+                        res += "vrf definition " + vrf[1] + "\n"
+                        res += " rd 100:" + vrf[2] + self.hostname[2] +"\n"
+                        res +=  " route-target export 100:100" + vrf[2] + "\n"
+                        res += " route-target import 100:100" + vrf[2] + "\n " + nl
+                        res += " address-family ipv4\n exit-address-family\n" + nl
+        res += nl
+        return res
 
 
 list_router = []
@@ -158,12 +181,12 @@ for r in data[0] :
     AS[list_router[-1].AS]=[]
 
 for r in list_router :
-    AS[r.AS].append(r.hostname)
+    AS[r.AS].append((r.hostname, r.border))
 
 fichiers = data[1]["config_files"]
 
 for r in list_router:
-    config = t[0]+r.hn+t[1]+ r.genInterface()+r.conn()+t[2]+t[3]
+    config = t[0]+r.hn+t[1]+r.vrf()+t[2]+ r.genInterface()+r.bgp()+r.conn()+t[3]+t[4]
 
     with open(data[1]["network_name"]+"\\project-files\\dynamips\\"+fichiers[r.hostname][0]+"\\configs\\i"+fichiers[r.hostname][1]+"_startup-config.cfg",'w',encoding='utf-8') as f :
         f.write(config)
