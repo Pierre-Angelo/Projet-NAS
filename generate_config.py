@@ -41,19 +41,6 @@ def i_autoip(routeurs,connexion_list):
                 ip=(f"1.{last_char_b}{last_char_a}.0.2/30")
                 routeurs[i]["interfaces"][interface]=ip
 
-def i_autoip_debug(routeurs):
-    for i,router in enumerate(routeurs):
-        hostname=router["hostname"]
-        for interface,value in router["interfaces"].items():
-            if [hostname,value] in connexion_list:
-                index = connexion_list.index([hostname, value])
-                ip=(f"1.168.{index+128}.1/30")
-                routeurs[i]["interfaces"][interface]=ip
-            elif [value,hostname] in connexion_list:
-                index = connexion_list.index([value,hostname])
-                ip=(f"1.168.{index+128}.2/30")
-                routeurs[i]["interfaces"][interface]=ip
-
 def mask(i) :
     if (i == 32) :
         return "255.255.255.255"
