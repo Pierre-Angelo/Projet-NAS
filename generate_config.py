@@ -179,10 +179,11 @@ class router() :
                     type_nei.append(inter[1])
         return res
 
-
-routeur_serveur=get_sr(data)
-connexion_list=icon(data,routeur_serveur)
-i_autoip(data,connexion_list)
+# auto-ip de provider
+routeurs=data[0]
+routeur_serveur=get_sr(routeurs)
+connexion_list=icon(routeurs,routeur_serveur)
+i_autoip(routeurs,connexion_list)
 
 list_router = []
 
