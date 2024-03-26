@@ -10,6 +10,50 @@ intent_file_name = ".\\intent_file_net_policies.json" #sys.argv[1]
 with open(intent_file_name,'r',encoding='utf-8') as f:
  data = list(json.load(f).values())
 
+def get_sr(routeurs):
+    routeur_serveur=[]
+    for i,router in enumerate(routeurs):
+        if router["AS"]==1:
+            routeur_serveur.append(router["hostname"])
+    return(routeur_serveur)
+
+def icon(routeurs,routeur_serveur):
+    connexion_list=[]
+    for i,router in enumerate(routeurs):
+        hostname=router["hostname"]
+        for interface,value in router["interfaces"].items():
+             if (value in routeur_serveur) and (([value,hostname]) not in connexion_list):
+                  connexion_list.append([hostname,value])
+    return(connexion_list)
+
+def i_autoip(routeurs,connexion_list):
+    for i,router in enumerate(routeurs):
+        hostname=router["hostname"]
+        for interface,value in router["interfaces"].items():
+            last_char_a = hostname[-1]
+            last_char_b = value[-1]
+            if [hostname,value] in connexion_list:
+                index = connexion_list.index([hostname, value])
+                ip=(f"1.{last_char_a}{last_char_b}.0.1/30")
+                routeurs[i]["interfaces"][interface]=ip
+            elif [value,hostname] in connexion_list:
+                index = connexion_list.index([value,hostname])
+                ip=(f"1.{last_char_b}{last_char_a}.0.2/30")
+                routeurs[i]["interfaces"][interface]=ip
+
+def i_autoip_debug(routeurs):
+    for i,router in enumerate(routeurs):
+        hostname=router["hostname"]
+        for interface,value in router["interfaces"].items():
+            if [hostname,value] in connexion_list:
+                index = connexion_list.index([hostname, value])
+                ip=(f"1.168.{index+128}.1/30")
+                routeurs[i]["interfaces"][interface]=ip
+            elif [value,hostname] in connexion_list:
+                index = connexion_list.index([value,hostname])
+                ip=(f"1.168.{index+128}.2/30")
+                routeurs[i]["interfaces"][interface]=ip
+
 def mask(i) :
     if (i == 32) :
         return "255.255.255.255"
@@ -73,7 +117,6 @@ class router() :
         # i-bgp
         if self.border != "NULL" :
             for nei in listRAS :
-                print(nei[1][0])
                 if nei[0] != self.hostname and nei[1] != "NULL":
                     res+= " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" remote-as "+ self.AS+"\n"
                     res+= " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" update-source Loopback0\n"
@@ -193,6 +236,11 @@ class router() :
         res += nl
         return res
 
+routeurs= data[0]
+routeur_serveur=get_sr(routeurs)
+connexion_list=icon(routeurs,routeur_serveur)
+i_autoip(routeurs,connexion_list)
+print(data)
 
 list_router = []
 
