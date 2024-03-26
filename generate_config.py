@@ -87,7 +87,7 @@ class router() :
 
 
         for nei in listRAS :
-            if nei != self.hostname and self.border != "NULL" and nei[1] != "NULL":
+            if nei[0] != self.hostname and self.border != "NULL" and nei[1] != "NULL":
                 res += nl+" address-family vpnv4\n"
                 res +=   "  neighbor "+self.AS+"."+nei[0][2]+".0.1"+ " activate\n"
                 res +=   "  neighbor "+self.AS+"."+nei[0][2]+".0.1"+ " send-community\n"
@@ -105,6 +105,25 @@ class router() :
 
             res += "  network " + self.AS*3 + "::/16\n" """
         res += " exit-address-family\n"+nl
+
+        if self.border != "NULL" :
+            for it in self.border :
+                if it[1] != "NULL" :
+                    vrf = it[1].split(":")
+                    if vrf[0] == "VRF" :
+                        res += " address-family ipv4 vrf " + vrf[1] + "\n"
+                        remAS = (self.interfaces[it[0]].split(".")[0]).replace(self.AS, "")
+                        res += "  neighbor " + self.interfaces[it[0]].split("1/")[0] + "2" + " remote-as " + remAS + "\n"
+                        res += "  neighbor " + self.interfaces[it[0]].split("1/")[0] + "2" + " activate\n"
+                        res += " exit-address-family\n " + nl
+                else :
+                    remAS = self.interfaces[it[0]].split(".")[0].replace(self.AS, "")
+                    res += " neighbor " + self.interfaces[it[0]].split("2/")[0] + "1" + " remote-as " + remAS +"\n " + nl
+                    res += " address-family ipv4\n"
+                    res += "  redistribute connected\n"
+                    res += "  neighbor " + self.interfaces[it[0]].split("2/")[0] + "1" + " activate\n"
+                    res += " exit-address-family\n" + nl
+
         return res
     
     def communities(self):
