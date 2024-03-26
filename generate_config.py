@@ -117,7 +117,7 @@ class router() :
         # i-bgp
         if self.border != "NULL" :
             for nei in listRAS :
-                if nei != self.hostname and nei[1] != "NULL":
+                if nei[0] != self.hostname and nei[1] != "NULL":
                     res+= " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" remote-as "+ self.AS+"\n"
                     res+= " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" update-source Loopback0\n"
         
