@@ -148,7 +148,7 @@ class router() :
                         res += "  neighbor "+ add + " route-map FILTER_TOWARDS_" + inter[1] +" out\n"
 
             res += "  network " + self.AS*3 + "::/16\n" """
-        res += " exit-address-family\n"+nl
+        res += " exit-address-family\n"+nl # source de problème
 
         if self.border != "NULL" :
             for it in self.border :
@@ -230,8 +230,11 @@ class router() :
                     if vrf[0] == "VRF" :
                         res += "vrf definition " + vrf[1] + "\n"
                         res += " rd 100:" + vrf[2] + self.hostname[2] +"\n"
-                        res +=  " route-target export 100:100" + vrf[2] + "\n"
-                        res += " route-target import 100:100" + vrf[2] + "\n " + nl
+                        res += " route-target export 100:100" + vrf[2] + "\n"
+                        res += " route-target import 100:100" + vrf[2] + "\n"
+                        for imp in data[2][vrf[1]]:
+                            res += " route-target import 100:100" + imp.split(":")[1] + "\n"
+                        res += " " + nl
                         res += " address-family ipv4\n exit-address-family\n" + nl
         res += nl
         return res

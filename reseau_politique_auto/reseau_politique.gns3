@@ -106,6 +106,24 @@
                 "x": 14,
                 "y": 230,
                 "z": 2
+            },
+            {
+                "drawing_id": "54c6af41-df3d-4c28-83d6-a33abbdf7e39",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"200.0\" height=\"200.0\"><ellipse cx=\"100\" rx=\"100\" cy=\"100\" ry=\"100\" fill=\"#ffffff\" fill-opacity=\"1.0\" stroke-width=\"2\" stroke=\"#000000\" /></svg>",
+                "x": -647,
+                "y": -204,
+                "z": -1
+            },
+            {
+                "drawing_id": "bafe984a-f92f-48db-91cf-2f60aeecdf64",
+                "locked": false,
+                "rotation": 0,
+                "svg": "<svg width=\"77\" height=\"40\"><text font-family=\"TypeWriter\" font-size=\"10.0\" font-weight=\"bold\" fill=\"#005500\" fill-opacity=\"1.0\">AS 8\nClient Vert</text></svg>",
+                "x": -584,
+                "y": -190,
+                "z": 2
             }
         ],
         "links": [
@@ -328,6 +346,38 @@
                             "y": 0
                         },
                         "node_id": "c2c11c7d-f514-4ee7-abb0-346109ed0810",
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "039f8e63-694c-408b-8e8a-73146500726a",
+                "link_style": {},
+                "nodes": [
+                    {
+                        "adapter_number": 1,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "g1/0",
+                            "x": 31,
+                            "y": 61
+                        },
+                        "node_id": "b739a0f6-598d-4b28-ba98-9eaa9dfcec17",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 3,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "g3/0",
+                            "x": 34,
+                            "y": -17
+                        },
+                        "node_id": "f4049be9-6cdd-4fa5-bdb6-af7e74535f40",
                         "port_number": 0
                     }
                 ],
@@ -1080,7 +1130,7 @@
                     "slot1": "PA-GE",
                     "slot2": "PA-GE",
                     "slot3": "PA-GE",
-                    "slot4": null,
+                    "slot4": "PA-GE",
                     "slot5": null,
                     "slot6": null,
                     "sparsemem": true,
@@ -1090,8 +1140,8 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "71a23f63-4818-4cfa-ad6a-dbe78f4b128a",
                 "width": 66,
-                "x": 306,
-                "y": -12,
+                "x": -592,
+                "y": -114,
                 "z": 1
             }
         ]

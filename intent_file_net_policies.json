@@ -3,13 +3,14 @@
         {
             "AS" : 1,
             "protocole" : "OSPF",
-            "border" : [["G1/0","VRF:Bleu:1"],["G4/0","VRF:Rouge:2"]],
+            "border" : [["G1/0","VRF:Bleu:1"],["G3/0","VRF:Vert:3"],["G4/0","VRF:Rouge:2"]],
             "hostname" : "R11",
             "OSPF_cost": {},  
             "interfaces" : 
                 {
                     "G1/0" : "14.41.0.1/30",
                     "G2/0" : "R14",
+                    "G3/0" : "18.81.0.1/30",
                     "G4/0" : "16.61.0.1/30"
                 }     
         },
@@ -97,6 +98,18 @@
                     "G1/0" : "17.71.0.2/30",
                     "G4/0" : "7.71.0.1/30"
                 }
+        },
+        {
+            "AS" : 8,
+            "protocole" : "OSPF",
+            "border" : [["G1/0","NULL"]],
+            "hostname" : "R81",
+            "OSPF_cost": {},
+            "interfaces" : 
+                {
+                    "G1/0" : "18.81.0.2/30",
+                    "G4/0" : "8.81.0.1/30"
+                }
         }
 
     ],
@@ -117,6 +130,11 @@
                     "R81" :["b739a0f6-598d-4b28-ba98-9eaa9dfcec17","11"]
 
                 }
+    },
+    "importVRF" : {
+        "Bleu" : ["Vert:3"],
+        "Rouge" : ["Vert:3"],
+        "Vert" : ["Rouge:2","Bleu:1"]
     }
 
 }
