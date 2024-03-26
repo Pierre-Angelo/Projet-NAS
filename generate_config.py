@@ -240,7 +240,6 @@ routeurs= data[0]
 routeur_serveur=get_sr(routeurs)
 connexion_list=icon(routeurs,routeur_serveur)
 i_autoip(routeurs,connexion_list)
-print(data)
 
 list_router = []
 
