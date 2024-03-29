@@ -27,7 +27,6 @@ python3 generate_config.py
 ```
 This command generates the startup configuration for each router.   
 Next, open your gns3 file and start all routers. They will automatically load their configuration. Wait for BGP to establish all connections (2.5 minutes). <br>
-If you see 888::/16 on blue clients' routing tables or 444::/16 and 555::/16 on red client's routing table, you are good to go!
    
 ## Features (Summary)
 The following features are supported and automated by this project (intent file + script + gns3 folder).
