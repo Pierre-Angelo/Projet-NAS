@@ -1,4 +1,4 @@
-# Network Automation Project
+# Network Architecture and Service Project
 
 The 3 main files are `generate_config.py`, `intent_file.json` and `reseau_demo\reseau_demo.gns3`.<br>
 If you are an **evaluator**, we recommend only reading sections **Quick config and lauch**, **Features (summary)** and **Behaviour and main gns3 file structure** (specially solution 1).
