@@ -5,7 +5,7 @@ if len(sys.argv) < 2 :
     print("usage : python3 generate_config.py [intent file name]")
     exit()"""
 
-intent_file_name = ".\\intent_file_net_policies.json" #sys.argv[1]
+intent_file_name = ".\\intent_file.json" #sys.argv[1]
 
 with open(intent_file_name,'r',encoding='utf-8') as f:
  data = list(json.load(f).values())
@@ -101,12 +101,14 @@ class router() :
         listRAS = AS[self.AS]
         res = "router bgp " +self.AS+"\n bgp router-id "+(self.AS+".")*3+self.hostname[2]+"\n bgp log-neighbor-changes\n"
 
+        temp = ""
+
         # i-bgp
         if self.border != "NULL" :
             for nei in listRAS :
                 if nei[0] != self.hostname and nei[1] != "NULL":
-                    res+= " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" remote-as "+ self.AS+"\n"
-                    res+= " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" update-source Loopback0\n"
+                    temp += " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" remote-as "+ self.AS+"\n"
+                    temp += " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" update-source Loopback0\n"
         
         # e-bgp
         """if self.border != "NULL" :
@@ -119,9 +121,9 @@ class router() :
 
         for nei in listRAS :
             if nei[0] != self.hostname and self.border != "NULL" and nei[1] != "NULL":
-                res += nl+" address-family vpnv4\n"
-                res +=   "  neighbor "+self.AS+"."+nei[0][2]+".0.1"+ " activate\n"
-                res +=   "  neighbor "+self.AS+"."+nei[0][2]+".0.1"+ " send-community\n"
+                temp += nl+" address-family vpnv4\n"
+                temp +=   "  neighbor "+self.AS+"."+nei[0][2]+".0.1"+ " activate\n"
+                temp +=   "  neighbor "+self.AS+"."+nei[0][2]+".0.1"+ " send-community\n"
                 
         """if self.border != "NULL" :
             for inter in self.border :
@@ -135,7 +137,9 @@ class router() :
                         res += "  neighbor "+ add + " route-map FILTER_TOWARDS_" + inter[1] +" out\n"
 
             res += "  network " + self.AS*3 + "::/16\n" """
-        res += " exit-address-family\n"+nl # source de problème
+        
+        if temp != "" :
+            res += temp + " exit-address-family\n"+nl # source de problème
 
         if self.border != "NULL" :
             for it in self.border :
