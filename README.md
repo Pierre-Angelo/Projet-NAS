@@ -1,9 +1,9 @@
 # Network Architecture and Service Project
 
 The 3 main files are `generate_config.py`, `intent_file.json` and `reseau_demo\reseau_demo.gns3`.<br>
-If you are an **evaluator**, we recommend only reading sections **Quick config and lauch**, **Features (summary)** and **Behaviour and main gns3 file structure** (specially solution 1).
+If you are an **evaluator**, we recommend only reading sections **Quick config and lauch**, **Features (summary)** and **Behaviour and main gns3 file structure** .
 
-The objective of this project is to simutlate complex networks using GNS3 to later develop a script to configure each router automatically. For this we will be using ipv6 connections on Cisco routers.
+The objective of this project is to simulate complex networks using GNS3 to later develop a script to configure each router automatically. For this prject we will be using ipv4 connections on Cisco routers.
 
 ## Prerequisites
 
@@ -11,7 +11,7 @@ The objective of this project is to simutlate complex networks using GNS3 to lat
 - A JSON file containing the network intent and configuration details.
 - A GNS3 file containing the network corresponding to the JSON file structure details.
 
-## Quick config and lauch:
+## Quick config and launch
 
 #### Windows
 Open a command prompt in the project directory and execute:
