@@ -1,6 +1,6 @@
 # Network Automation Project
 
-The 3 main files are `generate_config.py`, `intent_file.json` and `reseau_politique_auto\reseau_politique.gns3`.<br>
+The 3 main files are `generate_config.py`, `intent_file.json` and `reseau_demo\reseau_demo.gns3`.<br>
 If you are an **evaluator**, we recommend only reading sections **Quick config and lauch**, **Features (summary)** and **Behaviour and main gns3 file structure** (specially solution 1).
 
 The objective of this project is to simutlate complex networks using GNS3 to later develop a script to configure each router automatically. For this we will be using ipv6 connections on Cisco routers.
@@ -38,6 +38,7 @@ The following features are supported and automated by this project (intent file 
 &nbsp; - Establishment of neighbor relationships (internal and external).<br>
 &nbsp; - Route advertisement.<br>
 &nbsp; - VPNv4 where Red client and Blue cannot communicate with each other but they both can talk to the Green client. <br>
+&nbsp; - Two route reflectors in the core.
 
 
 #### Future Development
