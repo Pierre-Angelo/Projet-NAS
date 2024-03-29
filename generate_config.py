@@ -120,7 +120,7 @@ class router() :
         # if is a route reflector
         if self.route_reflector == "true" :
             for nei in listRAS :
-                    if nei[0] != self.hostname and nei[1] != "NULL":
+                    if nei[0] != self.hostname and (nei[1] != "NULL" or nei[2] == "true"):
                         temp += " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" remote-as "+ self.AS+"\n"
                         temp += " neighbor "+self.AS+"."+nei[0][2]+".0.1"+" update-source Loopback0\n"
         

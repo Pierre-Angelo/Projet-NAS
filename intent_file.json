@@ -34,7 +34,7 @@
             "border" : "NULL",
             "hostname" : "R13",
             "OSPF_cost": {},
-            "route_reflector" : "false",
+            "route_reflector" : "true",
             "interfaces" : 
                 {
                     "G1/0" : "R14",
@@ -147,7 +147,6 @@
                     "R61" :["54510fdb-2db8-48fa-96dc-a5111c7512a9","6"],
                     "R71" :["66e318a3-e892-48cf-8d07-1afe8566e227","7"],
                     "R15" :["c905c1b1-70e9-4dbb-bbbf-0fc54bea1bb9","8"],
-                    "R73" :["b318d6f5-c32a-4c99-bf9c-1b3f7b43f39c","9"],
                     "R14" :["56d97af8-2527-4610-8369-d8e76d581e22","10"],
                     "R81" :["b739a0f6-598d-4b28-ba98-9eaa9dfcec17","11"]
 
