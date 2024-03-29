@@ -3,7 +3,7 @@
 The 3 main files are `generate_config.py`, `intent_file.json` and `reseau_demo\reseau_demo.gns3`.<br>
 If you are an **evaluator**, we recommend only reading sections **Quick config and lauch**, **Features (summary)** and **Behaviour and main gns3 file structure** .
 
-The objective of this project is to simulate complex networks using GNS3 to later develop a script to configure each router automatically. For this prject we will be using ipv4 connections on Cisco routers.
+The objective of this project is to simulate complex networks using GNS3 to later develop a script to configure each router automatically. For this project we will be using ipv4 connections on Cisco routers.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ This command generates the startup configuration for each router.
 Next, open your gns3 file and start all routers. They will automatically load their configuration. Wait for BGP to establish all connections (2.5 minutes). <br>
    
 ## Features (Summary)
-The following features are supported and automated by this project (intent file + script + gns3 folder).
+The following features are supported and automated in this project (intent file + script + gns3 folder).
 
 1. Interface configurations with automated address attribution for interfaces inside the network.
 2. OSPF protocol support, including optional OSPF metrics configuration.
@@ -37,14 +37,14 @@ The following features are supported and automated by this project (intent file 
 4. Comprehensive BGP configuration:<br>
 &nbsp; - Establishment of neighbor relationships (internal and external).<br>
 &nbsp; - Route advertisement.<br>
-&nbsp; - VPNv4 where Red client and Blue cannot communicate with each other but they both can talk to the Green client. <br>
+&nbsp; - VPNv4 where the Red client and the Blue client cannot communicate with each other but they both can talk to the Green client. <br>
 &nbsp; - Two route reflectors in the core.
 
 
 #### Future Development
-- Integration of Telnet for remote management .
-- adding internet service on the network
-- add RSVP
+- Integration of Telnet for remote management
+- Adding internet service on the network
+- Add RSVP
 - Add Ingress TE services for multi-connected CE routers
 
 ## Intent File Configuration
@@ -53,9 +53,9 @@ Customize the `intent_file.json` to alter the network setup. Ensure your modific
 
 For each router:
 - Assign a hostname in the format: RXY, where X is the ASN and Y represents the router number.
-- Define interfaces and their corresponding addresses. If the interface is inside the network you can simply put the hostname of the conneted router and an address will be attributed automatically. 
+- Define interfaces and their corresponding addresses. If the interface is inside the network you can simply put the hostname of the connected router and an address will be attributed automatically. 
 
-Interfaces connected to other AS, must have one of the following formats dependig on the as number (n), remote-as number(m)
+Interfaces connected to other AS must have one of the following formats depending on the AS number (n), remote-AS number(m)
 
 - nm.mn.0.1/30 If configuring router and n<m
 - nm.mn.0.2/30 If configuring router and n>m
@@ -80,7 +80,7 @@ You will have an OSPF_cost field where you can modify the weight of each link. T
 This is optional and you can leave empty brackets if you do not wish to set weighted links.
 
 ### Border, Non-Border routers and BGP
-If it is a non border router (not connected to any external AS), set the broder field as it follows:
+If it is a non-border router (not connected to any external AS), set the border field as following:
 ```json
    {
       //...
@@ -91,7 +91,7 @@ If it is a non border router (not connected to any external AS), set the broder 
 This will create an iBGP Neighbor session with all adjacent routers.
 
 
-In the case of a Border router, you must indicate in this field wich interfaces connect to exrernal ASes:
+In the case of a Border router, you must indicate in this field wich interfaces connect to external ASes:
 ```json
    {
       //...
@@ -141,7 +141,7 @@ A configured router with all the option might look like this example:
 ```bash
    python generate_config.py
 ```
-(apply the same reasoning for linux by using pyhton3 instad).
+(apply the same reasoning for linux by using pyhton3 instead).
 
 3. The script will generate configuration files for each router defined in the JSON file and save them to the associated directory within the project structure.
 
@@ -150,4 +150,4 @@ A configured router with all the option might look like this example:
 - `routers`: An array of objects, each representing a router's configuration.
 - `config_files`: Specifies the directory and filename for each router's configuration file.
 - `network_name`: The name of your network, used in the directory path for saving configurations.
-- `importVRF` : specifies the iports of the different VRF
+- `importVRF` : specifies the imports of the different VRF
