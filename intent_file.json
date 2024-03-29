@@ -3,14 +3,14 @@
         {
             "AS" : 1,
             "protocole" : "OSPF",
-            "border" : [["G1/0","VRF:Bleu:1"],["G3/0","VRF:Vert:3"],["G4/0","VRF:Rouge:2"]],
+            "border" : [["G1/0","VRF:Bleu:1"],["G4/0","VRF:Rouge:2"]],
             "hostname" : "R11",
-            "OSPF_cost": {},  
+            "OSPF_cost": {},
+            "route_reflector" : "false",
             "interfaces" : 
                 {
                     "G1/0" : "14.41.0.1/30",
                     "G2/0" : "R14",
-                    "G3/0" : "18.81.0.1/30",
                     "G4/0" : "16.61.0.1/30"
                 }     
         },
@@ -20,6 +20,7 @@
             "border" : [["G1/0","VRF:Bleu:1"],["G3/0","VRF:Rouge:2"]],
             "hostname" : "R12",
             "OSPF_cost": {},
+            "route_reflector" : "false",
             "interfaces" : 
                 {
                     "G1/0" : "17.71.0.1/30",
@@ -33,6 +34,7 @@
             "border" : "NULL",
             "hostname" : "R13",
             "OSPF_cost": {},
+            "route_reflector" : "false",
             "interfaces" : 
                 {
                     "G1/0" : "R14",
@@ -45,10 +47,25 @@
             "border" : "NULL",
             "hostname" : "R14",
             "OSPF_cost": {},
+            "route_reflector" : "true",
             "interfaces" : 
                 {
                     "G1/0" : "R13",
-                    "G2/0" : "R11"
+                    "G2/0" : "R11",
+                    "G3/0" : "R15"
+                }
+        },
+        {
+            "AS" : 1,
+            "protocole" : "OSPF",
+            "border" : [["G2/0","VRF:Vert:3"]],
+            "hostname" : "R15",
+            "OSPF_cost": {},
+            "route_reflector" : "false",
+            "interfaces" : 
+                {
+                    "G1/0" : "R14",
+                    "G2/0" : "18.81.0.1/30"
                 }
         },
         {
@@ -57,6 +74,7 @@
             "border" : [["G1/0","NULL"]],
             "hostname" : "R41",
             "OSPF_cost": {},
+            "route_reflector" : "false",
             "interfaces" : 
                 {
                     "G1/0" : "14.41.0.2/30",
@@ -69,6 +87,7 @@
             "border" : [["G3/0","NULL"]],
             "hostname" : "R51",
             "OSPF_cost": {},  
+            "route_reflector" : "false",
             "interfaces" : 
                 {
                     "G3/0" : "15.51.0.2/30",
@@ -81,6 +100,7 @@
             "border" : [["G1/0","NULL"]],
             "hostname" : "R61",
             "OSPF_cost": {},
+            "route_reflector" : "false",
             "interfaces" : 
                 {
                     "G1/0" : "16.61.0.2/30",
@@ -93,6 +113,7 @@
             "border" : [["G1/0","NULL"]],
             "hostname" : "R71",
             "OSPF_cost": {},
+            "route_reflector" : "false",
             "interfaces" : 
                 {
                     "G1/0" : "17.71.0.2/30",
@@ -105,6 +126,7 @@
             "border" : [["G1/0","NULL"]],
             "hostname" : "R81",
             "OSPF_cost": {},
+            "route_reflector" : "false",
             "interfaces" : 
                 {
                     "G1/0" : "18.81.0.2/30",
@@ -115,7 +137,7 @@
     ],
     "info_files" :
         {
-            "network_name": "reseau_politique_auto",
+            "network_name": "reseau_demo",
             "config_files": {
                     "R11" :["f4049be9-6cdd-4fa5-bdb6-af7e74535f40","1"],
                     "R12" :["c2c11c7d-f514-4ee7-abb0-346109ed0810","2"],
@@ -124,7 +146,7 @@
                     "R51" :["26ee2b45-986d-4f7a-a4f0-b99339bf64e1","5"],
                     "R61" :["54510fdb-2db8-48fa-96dc-a5111c7512a9","6"],
                     "R71" :["66e318a3-e892-48cf-8d07-1afe8566e227","7"],
-                    "R72" :["c905c1b1-70e9-4dbb-bbbf-0fc54bea1bb9","8"],
+                    "R15" :["c905c1b1-70e9-4dbb-bbbf-0fc54bea1bb9","8"],
                     "R73" :["b318d6f5-c32a-4c99-bf9c-1b3f7b43f39c","9"],
                     "R14" :["56d97af8-2527-4610-8369-d8e76d581e22","10"],
                     "R81" :["b739a0f6-598d-4b28-ba98-9eaa9dfcec17","11"]
